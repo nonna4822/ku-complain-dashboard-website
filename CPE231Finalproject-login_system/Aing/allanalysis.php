@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChartJS - BarGraph</title>
+    <style type="text/css">
+        #chart-container {
+            width: 840px;
+            height: auto;
+        }
+
+        html {
+            background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: 'Waffle Regular';
+            font-size: 30px;
+            width: 100%;
+        }
+
+        .button1 {
+            background-color: rgba(255, 255, 255, 0.3);
+            background-position: center;
+            border: none;
+            padding: 0px 0px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            font-family: 'Waffle Regular';
+            border-radius: 12px;
+            color: white;
+
+        }
+
+        .menubar {
+            background-color: #225A69;
+            /* padding: 15px; */
+            opacity: 0.85;
+            width: 100%;
+            color: white;
+            font-size: 30px;
+            text-align: right;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="menubar">
+                <div class="col">
+                    <div class="col-sm-5" style="color:white; font-size:35px; text-align:center;margin-left:800px;">
+                        <div class="form-group">
+                            <a href='homepage.php' class="button1" style="width:250px">
+                                <img src="picture/house.png" alt="" width="30px">
+                                <strong> Home</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center>
+        <div class="col-md-12 spring-warmth-gradient">
+            <div class="title-block">
+                <h2>Number of Teacher each section</h2>
+            </div>
+            <div id="chart-container">
+                <canvas id="mycanvas1"></canvas>
+            </div>
+            <!-- javascript -->
+            <script type="text/javascript" src="jquery.min.js"></script>
+            <script type="text/javascript" src="Chart.min.js"></script>
+            <script type="text/javascript" src="ana2.js"></script>
+        </div>
+
+        <div class="col-md-12 spring-warmth-gradient" >
+            <div class="title-block" >
+                <h2>Number of section each branch</h2>
+            </div>
+            <div id="chart-container">
+                <canvas id="mycanvas"></canvas>
+            </div>
+            <!-- javascript -->
+            <script type="text/javascript" src="jquery.min.js"></script>
+            <script type="text/javascript" src="Chart.min.js"></script>
+            <script type="text/javascript" src="ana1.js"></script>
+        </div>
+
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Staff Register each branch each gender</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas3-1"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana3-1.js"></script>
+        </div>
+        
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Student Enrollment each subject each gender</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas4"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana4.js"></script>
+        </div>
+        
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Class each Branch</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas5"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana5.js"></script>
+        </div>
+        
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Class each Branch</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas6"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana6.js"></script>
+        </div>
+        
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Teacher each Branch</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas7"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana7.js"></script>
+        </div>
+        
+        <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Teacher who use class</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas8"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana8.js"></script>
+        </div>
+
+          <div class="col-md-12 spring-warmth-gradient">
+			<div class="title-block">
+				<h2>Number of Student with success/not_success enrollment each subject</h2>
+			</div>
+			<div id="chart-container">
+				<canvas id="mycanvas9"></canvas>
+			</div>
+			<!-- javascript -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="Chart.min.js"></script>
+			<script type="text/javascript" src="ana9.js"></script>
+        </div>
+        
+    </center>
+
+</body>
+
+
+
+</center>
+
+</html>

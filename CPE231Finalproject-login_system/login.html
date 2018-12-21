@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singin</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css"> -->
+  <style>
+    * {
+      font-family: 'Waffle Regular';
+
+    }
+
+    html {
+      background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      ;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: 'Waffle Regular';
+      width: 100%;
+    }
+
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    h1 {
+      font-family: 'Waffle Regular';
+      font-size: 60px;
+      color: #0099FF;
+      background-color: transparent;
+
+    }
+
+
+
+    body {
+      /* height: 100%; */
+      background-color: transparent;
+    }
+
+    .button {
+      background-color: transparent;
+      background-position: center;
+      opacity: 0.7;
+      border: none;
+      padding: 10px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 40px;
+      font-family: 'Waffle Regular';
+      border-radius: 12px;
+      color: navy;
+    }
+
+    .button1 {
+      background-color: rgba(255, 255, 255, 0.3);
+      background-position: center;
+      border: none;
+      padding: 0px 0px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 32px;
+      font-family: 'Waffle Regular';
+      border-radius: 12px;
+      color: white;
+
+    }
+
+    .menubar {
+      background-color: #225A69;
+      /* padding: 15px; */
+      opacity: 0.85;
+      width: 100%;
+      color: white;
+      font-size: 30px;
+      text-align: right;
+
+    }
+
+    .show {
+      display: block;
+    }
+
+    element.style {
+      font-size: 25px;
+      width: 30%;
+      text-align: center;
+      margin: 0px auto;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="menubar">
+            <div class="col">
+                <div class="col-sm-5" style="color:white; font-size:35px; text-align:center;margin-left:800px;">
+                    <div class="form-group">
+                        <a href='homepage.php' class="button1" style="width:250px">
+                            <img src="picture/house.png" alt="" width="30px">
+                            <strong> Home</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-sm" style="text-align: center">
+        <div class="form-group">
+          <h1>
+            <strong>Sign in</strong>
+          </h1>
+          <form action="login.php" method="post">
+            <div class="form-group" style="font-size:30px;width:30%;text-align:center;margin: 0px auto;">
+              <label for="cardno">Enter your Cardinal Number.</label>
+              <input type="int" class="form-control" style=" font-size:25px;" id="cardno" name="cardno">
+            </div>
+            <div class="form-group" style="font-size:30px;width:30%;text-align:center;margin: 0px auto;" s>
+              <label for="Your Tel. Number">Your Tel. Number</label>
+              <input type="password" class="form-control" style=" font-size:30px;" id="tel" name="tel">
+            </div>
+            <div class="form-check form-check-inline" style=" font-size:30px; background-color:transparent ">
+              <input class="form-check-input" type="radio" name="choice" value="student">
+              <label class="form-check-label">
+                <strong>Student</strong>
+              </label>
+            </div>
+            <div class="form-check form-check-inline" style=" font-size:30px; background-color:transparent  ">
+              <input class="form-check-input" type="radio" name="choice" value="staff">
+              <label class="form-check-label">
+                <strong>Staff</strong>
+              </label>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary" style=" font-size:30px;">
+                <strong>Login</strong>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    /* When the user clicks on the button,
+                                                                                          toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

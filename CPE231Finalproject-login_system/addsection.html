@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Staff Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <!-- import font to html -->
+    <link rel="stylesheet" type="text/css" href="font.css">
+  </head>
+  <body>
+    <h1>Add sections.</h1>
+
+
+
+                <form action="addsection.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="sectionname">Sectionname</label>
+                            <input type="text" class="form-control" id="sectionname"  name="sectionname" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="subjectid">Subject</label>
+                            <select name="subjectid" class="form-control">
+                                <option value="1">Automotive</option>
+                                <option value="2">Dessert Making Skills</option>
+                                <option value="3">Electrician</option>
+                                <option value="4">Air Conditioning Technician</option>
+                                <option value="5">Sound Engineer</option>
+                                <option value="6">Thai massage</option>
+                                <option value="7">English Skill</option>
+                                <option value="8">Makeup Skill</option>
+                                <option value="9">Hair dresser</option>
+                                <option value="10">Cooking skill</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="maxstudent">Maxstudent</label>
+                            <input type="text" class="form-control" id="maxstudent" name="maxstudent" required>
+                        </div>
+                        <!-- <div class="form-group col-md-6">
+                            <label for="semester">Semester</label>
+                            <input type="text" class="form-control" id="semester"  name="semester" required>
+                        </div> -->
+                        <div class="form-group col-md-6">
+                            <label for="semester">Semester</label>
+                            <select name="semester" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-group col-md-6">
+                            <label for="shift<">Shift</label>
+                            <input type="text" class="form-control" placeholder="Morning , Afternoon , Evening"id="shift"  name="shift" required>
+                        </div> -->
+                        <div class="form-group col-md-6">
+                            <label for="shift">Shift</label>
+                            <select name="shift" class="form-control">
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                                <option value="Evening">Evening</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cost">Cost</label>
+                            <input type="text" class="form-control" id="cost" name="cost" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="classno">Class No.</label>
+                            <input type="text" class="form-control" id="classno" name="classno" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="branchid">BranchName</label>
+                            <select name="branchid" class="form-control">
+                                <option value="1">Bangkok Training School (Din Daeng 1)</option>
+                                <option value="2">Bangkok Training School (Din Daeng 2)</option>
+                                <option value="3">Bangkok Training School (Khlong Toei)</option>
+                                <option value="4">Bangkok Training School (Bon Kai)</option>
+                                <option value="5">Bangkok Training School (Nong Jok)</option>
+                                <option value="6">Bangkok Training School (Bang Rak)</option>
+                                <option value="7">Bangkok Training School (Luang Por Taweesak)</option>
+                                <option value="8">Bangkok Training School (Kanchana Singh)</option>
+                                <option value="9">Bangkok Training School (Mouan Bumrungsin)</option>
+                                <option value="10">Bangkok Training School (Arthon)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="time">Time</label>
+                            <input type="text" class="form-control" placeholder="xx.xx-xx.xx"id="time" name="time" required>
+                        </div>
+
+                        <!-- <div class="form-group col-md-6">
+                            <label for="day">Day</label>
+                            <input type="text" class="form-control" placeholder="Mon-Fri,Sat-Sun"id="day" name="day" required>
+                        </div> -->
+
+                        <div class="form-group col-md-6">
+                            <label for="day">Day</label>
+                            <select name="day" class="form-control">
+                                <option value="Monday - Friday">Monday - Friday</option>
+                                <option value="Saturday - Sunday">Saturday - Sunday</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="openday">Openday</label>
+                            <input type="date" class="form-control" id="openday" name="openday" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="closeday">Closeday</label>
+                            <input type="date" class="form-control" id="closeday" name="closeday" required>
+                        </div>
+
+
+                        <div style="width:100%">
+                            <input type="submit" value="Add" style="border-radius: 15px; width: 100px; border: 1px solid black; font-size: 25px;background-color: white;" required>
+                        </div>
+                    </div>
+                </form>
+
+                <button type="button" name="back" onclick="location.href='adminview.php'">Back</button>
+
+
+  </body>
+</html>
