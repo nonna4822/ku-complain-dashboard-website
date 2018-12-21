@@ -213,17 +213,17 @@ function showComplaint(str) {
     </select>
   </div>
 
-  <table class="table table-secondary table-hover">
-    <thead class="thead-dark">
+  <div id = "complaintTable" >
+    <!-- <thead class="thead-dark">
       <tr >
         <th width="200" height="">หัวข้อเรื่อง</th>
         <th >เนื้อหา</th>
         <th width="200" >Option</th>
       </tr>
     </thead>
-    <tbody id = "complaintTable">
-    </tbody>
-  </table>
+    <tbody >
+    </tbody> -->
+  </div>
 
 
 </div>
