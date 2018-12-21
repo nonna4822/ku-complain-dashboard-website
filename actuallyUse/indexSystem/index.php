@@ -71,12 +71,18 @@ function showComplaint(str) {
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">สถิติ</p></button>
         </form>
     <div class="w3-dropdown-hover">
-    <button class="btn btn-outline-primary">หมวดหมู่</button>
-    <div class="w3-dropdown-content w3-bar-block w3-border" onclick="showComplaint(str)">
-      <a onclick="showComplaint(this.value)" href="login.html" class="w3-bar-item w3-button">หมวดการเรียน</a>
-      <a href="#" class="w3-bar-item w3-button">หมวดทั่วไป</a>
-      <a href="#" class="w3-bar-item w3-button">หมวดอื่นๆ</a>
-    </div>
+    <!-- <div class="w3-dropdown-content w3-bar-block w3-border" onclick="showComplaint(str)">
+      <a onclick="showComplaint(this.value)" href="#" class="w3-bar-item w3-button" value="1">หมวดการเรียน</a>
+      <a onclick="showComplaint(this.value)" href="#" class="w3-bar-item w3-button" value="2">หมวดทั่วไป</a>
+      <a onclick="showComplaint(this.value)" href="#" class="w3-bar-item w3-button">หมวดอื่นๆ</a>
+    </div> -->
+    <select onchange="showComplaint(this.value)" class="selectpicker">
+      <option value="">เลือกหมวดหมู่</option>
+      <?php
+        require getCateOption.php;
+       ?>
+    </select>
+
   </div>
         </ul>
 
