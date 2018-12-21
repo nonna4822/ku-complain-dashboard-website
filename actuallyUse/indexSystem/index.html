@@ -40,26 +40,26 @@ function showComplaint(str) {
 }
 </script>
 </head>
-    
-<body> 
-    
+
+<body>
+
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
-    
+
     <ul class="nav">
         <li class="nav-item">
             <img src="รูป/8.png" width="100" height="85">
-            
+
         </li>
     </ul>
-    
+
     <ul class="nav justify-content-end" style="padding-left:1em">
         <li class="nav-item ">
             <h2 id="K1"><p class ="sansserif">ระบบจัดการเรื่องร้องเรียนสำหรับนิสิต</h2>
             <h4 id="C1"><p class ="sansserif">ภาควิชาวิศวกรรมคอมพิวเตอร์</h4>
         </li>
     </ul>
-    
+
     <ul class="nav justify-content-end" style="padding-left:30em">
 <form method="get" action="login.html">
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
@@ -73,7 +73,7 @@ function showComplaint(str) {
     <div class="w3-dropdown-hover">
     <button class="btn btn-outline-primary">หมวดหมู่</button>
     <div class="w3-dropdown-content w3-bar-block w3-border" onclick="showComplaint(str)">
-      <a href="login.html" class="w3-bar-item w3-button">หมวดการเรียน</a>
+      <a onclick="showComplaint(this.value)" href="login.html" class="w3-bar-item w3-button">หมวดการเรียน</a>
       <a href="#" class="w3-bar-item w3-button">หมวดทั่วไป</a>
       <a href="#" class="w3-bar-item w3-button">หมวดอื่นๆ</a>
     </div>
@@ -82,10 +82,7 @@ function showComplaint(str) {
 
 </nav><br>
 
-    
-    
-    
-    
+
 <div class="container"><br><br><br>
 
     <center><h2><p class ="sansserif">เรื่องร้องเรียน</p></h2></center><br>
@@ -96,10 +93,10 @@ function showComplaint(str) {
         <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
       </div>
         </div>
-    <h2><p class ="sansserif">หมวดหมู่ที่ 1 : </h2><br>
+    <h2><p class ="sansserif">หมวดหมู่ที่ 1 : this text <span id = "display">for display</span></h2><br>
       <center>
-      <div class="list-group" style="width:800px">     
-          
+      <div class="list-group" style="width:800px">
+
           <table class="table table-bordered table-secondary table-hover">
               <thead class="thead-dark">
                   <tr>
@@ -108,7 +105,7 @@ function showComplaint(str) {
                       <th><center><p class ="sansserif">วันที่</center></th>
                   </tr>
               </thead>
-              
+
               <tbody>
                   <tr>
                       <td><p class ="sansserif">หัวข้อปัญหา 1</td>
@@ -136,7 +133,7 @@ function showComplaint(str) {
                   </tr>
               </tbody>
           </table>
-          
+
           </div></center>
     </form>
 </div>
