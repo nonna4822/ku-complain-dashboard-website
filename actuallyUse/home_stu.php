@@ -177,7 +177,7 @@ function showComplaint(str) {
 <div class="sidebar">
     <img src="รูป/logo_KU-cb.jpg" width="200" height="200" >
   <a class="active" href="home.html">Home</a>
-  <a href="addpost.html">แจ้งเรื่องร้องเรียน</a>
+  <a href="?controller=complaint&action=newcomplaint">แจ้งเรื่องร้องเรียน</a>
     <a  href="check.html">เช็คสถานะเรื่องร้องเรียน</a>
   <a href="#about">About</a>
 </div>
@@ -222,7 +222,6 @@ function showComplaint(str) {
       </tr>
     </thead>
     <tbody id = "complaintTable">
-      </tr> -->
     </tbody>
   </table>
 
