@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-$sql = "SELECT * FROM complaint;
+$sql = "SELECT * FROM complaint";
 $result = mysqli_query($conn,$sql);
 
 $selectObj = "<select name=\"cds\" onchange=\"showCD(this.value)\">"
