@@ -7,7 +7,7 @@ function call($controller, $action){
 		case "pages":	$controller = new PagesController();
 				break;
         case "complaint":
-            require_once("model/categoryModel.php");
+     require_once("model/categoryModel.php");
 		$controller = new ComplaintController();
 		break;
         case "department":

@@ -61,10 +61,10 @@ function showComplaint(str) {
     </ul>
     
     <ul class="nav justify-content-end" style="padding-left:30em">
-<form method="get" action="login.html">
+<form method="get" action="login.php">
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
         </form>
-        <form method="get" action="login1.html">
+        <form method="get" action="login1.php">
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
             </form>
         <form method="get" action="statics.html">

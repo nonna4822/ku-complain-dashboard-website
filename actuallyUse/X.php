@@ -1,3 +1,11 @@
+<?php 
+if(isset($_GET['controller'])&&isset($_GET['action']))
+{	$controller = $_GET['controller'];
+	$action = $_GET['action'];
+}else
+{	$controller = 'pages';
+	$action = 'home';
+} ?>
 <?php
 
 //session
@@ -148,7 +156,7 @@ div.content {
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script>
-function showComplaint(str) {
+/*function showComplaint(str) {
     if (str == "") {
         document.getElementById("complaintTable").innerHTML = "";
         return;
@@ -168,17 +176,18 @@ function showComplaint(str) {
         xmlhttp.open("GET","testShowComplaint.php?q="+str,true);
         xmlhttp.send();
     }
-}
+}*/
 </script>
 </head>
 
 <body>
+    
 
 <div class="sidebar">
     <img src="รูป/logo_KU-cb.jpg" width="200" height="200" >
-  <a class="active" href="home.html">Home</a>
-  <a href="addpost.html">แจ้งเรื่องร้องเรียน</a>
-    <a  href="check.html">เช็คสถานะเรื่องร้องเรียน</a>
+  <a class="active" href="home_stu.php" title="หน้าแรก">Home</a>
+  <a href="?controller=complaint&action=newcomplaint">แจ้งเรื่องร้องเรียน</a>
+    <a  href="check.php">เช็คสถานะเรื่องร้องเรียน</a>
   <a href="#about">About</a>
 </div>
 
@@ -201,66 +210,4 @@ function showComplaint(str) {
   </div>
  </div>
 </div><br><br><br><br>
-
-
-<div class="container" style="padding-left: 15%">
-  <div class="row">
-    <h2>กระทู้ร้องเรียน</h2>
-    <select name="category" onchange="showComplaint(this.value)">
-      <option value="1">การทุจริตภายในมหาวิทยาลัย</option>
-      <option value="2">การซ่อมบำรุง</option>
-      <option value="3">ซักถามข้อสงสัยทั่วไป</option>
-    </select>
-  </div>
-
-  <table class="table table-secondary table-hover">
-    <thead class="thead-dark">
-      <tr >
-        <th width="200" height="">หัวข้อเรื่อง</th>
-        <th >เนื้อหา</th>
-        <th width="200" >Option</th>
-      </tr>
-    </thead>
-    <tbody id = "complaintTable">
-      
-    </tbody>
-  </table>
-
-
-</div>
-
-
-
-
-<script>
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-        var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-
-
-
-</body>
-</html>
+    <?php require_once("routes.php"); ?>
