@@ -22,7 +22,7 @@ if(mysqli_num_rows($result) == 1){
     $_SESSION['name'] = $row["stuname"] . " " . $row["stuLastname"];
 
     //go to homepage. ( logged )
-    header("Location: home.php"); //go to student view
+    header("Location: home_stu.php"); //go to student view
     exit;
   }else {
     echo "username or password is wrong";

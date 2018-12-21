@@ -34,7 +34,7 @@ function showComplaint(str) {
                 document.getElementById("complaintTable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","testShowComplaint.php?q="+str,true);
+        xmlhttp.open("GET","../actuallyUse/Showplain.php?q="+str,true);
         xmlhttp.send();
     }
 }
@@ -72,7 +72,7 @@ function showComplaint(str) {
         </form>
     <div class="w3-dropdown-hover">
     <button class="btn btn-outline-primary">หมวดหมู่</button>
-    <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="w3-dropdown-content w3-bar-block w3-border" onclick="showComplaint(str)">
       <a href="login.html" class="w3-bar-item w3-button">หมวดการเรียน</a>
       <a href="#" class="w3-bar-item w3-button">หมวดทั่วไป</a>
       <a href="#" class="w3-bar-item w3-button">หมวดอื่นๆ</a>
