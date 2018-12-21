@@ -1,6 +1,6 @@
 <html lang="en">
     <style>
-        body{background-image: url(รูป/03-897.jpg)}
+        body{background-image: url(../รูป/03-897.jpg)}
         h2#K1{color:darkcyan}
         h4#C1{color: aliceblue}
         p.sansserif {
@@ -10,7 +10,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <title>ระบบจัดการเรื่องร้องเรียนสำหรับนิสิตภาควิชาวิศวกรรมคอมพิวเตอร์</title>
-    <link rel="shortcut icon" href="รูป/8.png" />
+    <link rel="shortcut icon" href="../รูป/8.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -48,7 +48,7 @@ function showComplaint(str) {
 
     <ul class="nav">
         <li class="nav-item">
-            <img src="รูป/8.png" width="100" height="85">
+            <img src="../รูป/8.png" width="100" height="85">
 
         </li>
     </ul>
@@ -78,9 +78,7 @@ function showComplaint(str) {
     </div> -->
     <select onchange="showComplaint(this.value)" class="selectpicker">
       <option value="">เลือกหมวดหมู่</option>
-      <?php
-        require getCateOption.php;
-       ?>
+
     </select>
 
   </div>
