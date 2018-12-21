@@ -6,9 +6,7 @@
 
     <script>
     function showComplaint(str) {
-        document.getElementById("display").innerHTML = str;
         if (str == "") {
-            document.getElementById("display").innerHTML = "no data in str";
             document.getElementById("complaintTable").innerHTML = "no data in str";
             return;
         } else {
@@ -40,10 +38,6 @@
      ?>
 
     <h1> Use the above value continue query in "getCateOption.php"</h1>
-
-    <p id="display">
-      This text use for monitor value that will pass to the ajax
-    </p>
 
     <div class="" id = "complaintTable">
       <!-- show table in the future -->
