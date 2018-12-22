@@ -3,7 +3,7 @@
 //session
 session_start();
 
-require 'connect.php';
+require '../connect.php';
 
 // Set php variables
 $username = mysqli_real_escape_string($conn,$_GET['username']);
@@ -19,10 +19,10 @@ if(mysqli_num_rows($result) == 1){
   if($row["spassword"] == $password){
     //set session var
     $_SESSION['username'] = $row["sid"];
-    $_SESSION['name'] = $row["stuname"] . " " . $row["stuLname"];
+    $_SESSION['name'] = $row["stuname"] . " " . $row["stuLastname"];
 
     //go to homepage. ( logged )
-    header("Location: home_stu.php"); //go to student view
+    header("Location: ../home_stu.php"); //go to student view
     exit;
   }else {
     echo "username or password is wrong";

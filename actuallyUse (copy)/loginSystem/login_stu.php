@@ -1,6 +1,6 @@
 <html lang="en">
     <style>
-        body{background-image: url(รูป/03-897.jpg)}
+        body{background-image: url(../รูป/03-897.jpg)}
         h2#K1{color:darkcyan}
         h4#C1{color: aliceblue}
         p.sansserif {
@@ -10,7 +10,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <title>เข้าสู่ระบบ</title>
-    <link rel="shortcut icon" href="รูป/8.png" />
+    <link rel="shortcut icon" href="../รูป/8.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@
 
     <ul class="nav">
         <li class="nav-item">
-            <img src="รูป/8.png" width="100" height="85">
+            <img src="../รูป/8.png" width="100" height="85">
 
         </li>
     </ul>
@@ -56,16 +56,18 @@
           <label><b>Password</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password" required>
           <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
         </div>
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <form method="get" action="index.php">
+          <form method="get" action="index.html">
               <button onclick="document.getElementById('id01').style.display='none'" type="submit" class="w3-button w3-red"><p class ="sansserif">กลับสู่หน้าหลัก</button></form>
       </div>
 
     </div>
   </div>
+</div>
 
 </body>
 </html>

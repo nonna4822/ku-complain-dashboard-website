@@ -3,14 +3,9 @@
 require '../connect.php';
 
 
-$categoryName = $_GET['q'];
+$categoryId = intval($_GET['q']);
 
-<<<<<<< HEAD
-// $sql = "SELECT * FROM complaint "; //for database testing
-$sql = "SELECT * FROM complaint WHERE catname = '$categoryName'"; //where missing .
-=======
-$sql = "SELECT * FROM complaint"; //where missing .
->>>>>>> 897fbbd051820a0a182bdc30eedb347e7fb89557
+$sql = "SELECT * FROM complaint WHERE idcat = '$categoryId' "; //where missing .
 $result = mysqli_query($conn,$sql);
 
 echo '<table class="table table-secondary table-hover">';
