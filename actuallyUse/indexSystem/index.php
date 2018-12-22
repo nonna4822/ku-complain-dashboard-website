@@ -71,12 +71,12 @@
     </ul>
 
     <ul class="nav justify-content-end" style="padding-left:30em">
-<form method="get" action="login.html">
-        <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
-        </form>
-        <form method="get" action="login1.html">
-        <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
-            </form>
+      <form method="get" action="../loginSystem/login_stu.php">
+              <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
+              </form>
+              <form method="get" action="../loginSystem/login_staf.php">
+              <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
+                  </form>
         <form method="get" action="statics.html">
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">สถิติ</p></button>
         </form>
@@ -104,7 +104,7 @@
         </div>
       <center>
       <div id="complaintTable" class="list-group" style="width:800px">
-
+          <!--  display table -->
         </div></center>
     </form>
 </div>

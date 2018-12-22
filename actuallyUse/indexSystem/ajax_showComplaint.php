@@ -3,9 +3,10 @@
 require '../connect.php';
 
 
-$categoryId = intval($_GET['q']);
+$categoryName = $_GET['q'];
 
-$sql = "SELECT * FROM complaint WHERE idcat = '$categoryId'"; //where missing .
+// $sql = "SELECT * FROM complaint "; //for database testing
+$sql = "SELECT * FROM complaint WHERE catname = '$categoryName'"; //where missing .
 $result = mysqli_query($conn,$sql);
 
 echo '<table class="table table-secondary table-hover">';
