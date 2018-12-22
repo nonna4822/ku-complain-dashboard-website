@@ -167,7 +167,7 @@ function showComplaint(str) {
                 document.getElementById("complaintTable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","ajax_showOwnComplaint.php?sid="+str,true);
+        xmlhttp.open("GET","ajax_showOwnComplaint.php?stuid="+str,true);
         xmlhttp.send();
     }
 }

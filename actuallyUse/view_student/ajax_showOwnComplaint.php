@@ -3,10 +3,10 @@
 require '../connect.php';
 
 
-$sid = $_GET['sid'];
+$stuid = $_GET['stuid'];
 
-echo $sid;
-$sql = "SELECT * FROM complaint WHERE stuid = '$sid' "; //where missing .
+echo $stuid;
+$sql = "SELECT * FROM complaint WHERE stuid = '$stuid' "; //where missing .
 // $sql = "SELECT * FROM complaint"; //database testing
 $result = mysqli_query($conn,$sql);
 
