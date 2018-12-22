@@ -22,7 +22,7 @@ if(mysqli_num_rows($result) == 1){
     $_SESSION['name'] = $row["adminname"];
 
     //go to homepage. ( logged )
-    header("Location: ../management.php"); //go to student view
+    header("Location: ../management/management.php"); //go to student view
     exit;
   }else {
     echo "username or password is wrong";

@@ -8,7 +8,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 } ?>
 <html lang="en">
     <style >
-        body{background-image: url(รูป/03-897.jpg)}
+        body{background-image: url(../รูป/03-897.jpg)}
         h2#K1{color:darkcyan}
         h4#C1{color: aliceblue}
         p.sansserif {
@@ -18,7 +18,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <head>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <title>การจัดการ</title>
-    <link rel="shortcut icon" href="รูป/8.png" />
+    <link rel="shortcut icon" href="../รูป/8.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -37,7 +37,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 
     <ul class="nav">
         <li class="nav-item">
-            <img src="รูป/8.png" width="100" height="85">
+            <img src="../รูป/8.png" width="100" height="85">
 
         </li>
     </ul>
@@ -50,7 +50,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     </ul>
      <ul class="nav justify-content-end" style="padding-left:47em">
 
-        <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "index.html" >ออกจากระบบ</a></p></button></ul>
+        <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "../loginSystem/logout.php" >ออกจากระบบ</a></p></button></ul>
 
 </nav><br>
 <div class="container"><br>
@@ -59,25 +59,24 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
           <div class = "row">
           <div class="col-xs-12 col-sm-4 col-md-4">
               <p align = "center">
-          <img src="%E0%B8%A3%E0%B8%B9%E0%B8%9B/login.png" class="img-responsive"  width="250" height="200">
-                  <a href="#" class = "btn btn-success">จัดการผู้ร้องเรียน</a></p>
+          <img src="../รูป/login.png" class="img-responsive"  width="250" height="200">
+                  <a href="CRUDuser.php" class = "btn btn-success">จัดการผู้ร้องเรียน</a></p>
               </div>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <p align = "center">
-          <img src="รูป/12.png" class="img-responsive"  width="250" height="200">
-                    <a href="#" class = "btn btn-success">จัดการผู้รับเรื่องร้องเรียน</a></p>
+          <img src="../รูป/12.png" class="img-responsive"  width="250" height="200">
+                    <a href="CRUDrecipient.php" class = "btn btn-success">จัดการผู้รับเรื่องร้องเรียน</a></p>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-4">
             <p align = "center">
-          <img src="รูป/15.png" class="img-responsive" width="250" height="200">
-            <a href="?controller=category&action=index" class = "btn btn-success">จัดการหมวดหมู่</a></p>
+          <img src="../รูป/15.png" class="img-responsive" width="250" height="200">
+            <a href="CRUDcategory.php" class = "btn btn-success">จัดการหมวดหมู่</a></p>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-4">
             <p align = "center"><br>
-          <img src="%E0%B8%A3%E0%B8%B9%E0%B8%9B/complaints.png" class="img-responsive" width="250" height="200">
-            <a href="#" class = "btn btn-success">จัดการเรื่องร้องเรียน</a></p>
+          <img src="../รูป/complaints.png" class="img-responsive" width="250" height="200">
+            <a href="CRUDcomplaint.php" class = "btn btn-success">จัดการเรื่องร้องเรียน</a></p>
 					</div>
 </div><br>
-<?php require_once("routes.php"); ?>
 </body>
 </html>
