@@ -1,5 +1,5 @@
 <?php
-require '../connect.php';
+require 'connect.php';
 
 $sql = "SELECT * FROM category";
 $result = mysqli_query($conn,$sql);

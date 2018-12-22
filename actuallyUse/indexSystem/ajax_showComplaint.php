@@ -5,6 +5,10 @@ require '../connect.php';
 
 $categoryName = $_GET['q'];
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac7aaf5ef5c798c280f7faa86afa652710fbcbe4
 // $sql = "SELECT * FROM complaint "; //for database testing
 $sql = "SELECT * FROM complaint WHERE catname = '$categoryName'"; //where missing .
 // $sql = "SELECT * FROM complaint"; //where missing .
