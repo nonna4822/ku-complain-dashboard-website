@@ -36,41 +36,25 @@
     </ul>
 
     <ul class="nav justify-content-end" style="padding-left:47em">
-
-        <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "../loginSystem/logout.php" >ออกจากระบบ</a></p></button></ul>
-
+      <form action="../loginSystem/logout.php">
+       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button></ul>
+     </form>
 </nav><br><br><br>
-
-
-
-
-
 <div class="container">
   <center><h2 style="color: black"><p class ="sansserif">จัดการเรื่องร้องเรียน</h2></center><br><br>
   <table class="table table-dark table-hover table-bordered" >
     <thead>
       <tr>
-        <th><center style="width:300px;">รหัสเรื่องร้องเรียน</center></th>
-        <th><center style="width:300px;">ชื่อเรื่องร้องเรียน</center></th>
+        <th><center style="width:200px;">ชื่อเรื่องร้องเรียน</center></th>
+        <th><center style="width:200px;">ชื่อหมวดหมู่</center></th>
+        <th><center style="width:200px;">เวลา</center></th>
         <th colspan="3" style="width:300px;"><center>Modify</center></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>66587</td>
-        <td>เรื่อง1</td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
-      <tr>
-        <td>87456</td>
-        <td>เรื่อง2</td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
-      <tr>
-        <td>66541</td>
-        <td>เรื่อง3</td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
+      <?php
+        require ('../managementsystem/category/querycomplaint.php');
+       ?>
     </tbody>
   </table>
 </div>

@@ -36,47 +36,29 @@
     </ul>
 
     <ul class="nav justify-content-end" style="padding-left:47em">
-
-        <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "../loginSystem/logout.php" >ออกจากระบบ</a></p></button></ul>
-
+      <form action="../loginSystem/logout.php">
+       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button></ul>
+     </form>
 </nav><br><br><br>
-
-
-
-
-
 <div class="container">
-  <center><h2 style="color: black"><p class ="sansserif">จัดการผู้รับเรื่อง</h2></center><br><br>
+<center><h2 style="color: black"><p class ="sansserif">จัดการผู้รับเรื่อง</h2></center><br><br>
+  <form action = '../management/addrecipient.php'>
+  <center><button type='sumit' class='btn btn-success' style='width:130px; height:40px;'>เพิ่มผู้รับเรื่อง</button></center>
+</form>
   <table class="table table-dark table-hover table-bordered" >
     <thead>
       <tr>
-        <th><center style="width:300px;">ชื่อ</center></th>
-        <th><center style="width:300px;">นามสกุล</center></th>
+        <th><center style="width:150px;">username</center></th>
+        <th><center style="width:150px;">ชื่อ</center></th>
+        <th><center style="width:150px;">นามสกุล</center></th>
+        <th><center style="width:150px;">ชื่อหมวดหมู่</center></th>
         <th colspan="3" style="width:300px;"><center>จัดการผู้รับเรื่อง</center></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td><center><button type="button" class="btn btn-outline-success" style="width:100px; height:40px;">เพิ่มผู้รับเรื่อง</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-warning" style="width:100px; height:40px;">แก้ไข</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td><center><button type="button" class="btn btn-outline-success" style="width:100px; height:40px;">เพิ่มผู้รับเรื่อง</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-warning" style="width:100px; height:40px;">แก้ไข</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td><center><button type="button" class="btn btn-outline-success" style="width:100px; height:40px;">เพิ่มผู้รับเรื่อง</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-warning" style="width:100px; height:40px;">แก้ไข</button></center></td>
-        <td><center><button type="button" class="btn btn-outline-danger" style="width:100px; height:40px;">ลบ</button></center></td>
-      </tr>
+      <?php
+        require ('../managementsystem/category/queryreciever.php');
+       ?>
     </tbody>
   </table>
 </div>

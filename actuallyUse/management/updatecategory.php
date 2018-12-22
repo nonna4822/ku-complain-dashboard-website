@@ -9,11 +9,14 @@
     </style>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <title>จัดการหมวดหมู่</title>
+    <title>เพิ่มผู้รับเรื่อง</title>
     <link rel="shortcut icon" href="../รูป/8.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -35,34 +38,18 @@
         </li>
     </ul>
 
-    <ul class="nav justify-content-end" style="padding-left:47em">
-      <form action="../loginSystem/logout.php">
-       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button></ul>
-     </form>
-</nav><br><br><br>
-
-
-
-
-
-<div class="container">
-  <center><h2 style="color: black"><p class ="sansserif">จัดการหมวดหมู่</h2></center><br><br>
-    <form action = '../management/addcategory.php'>
-    <center><button type='sumit' class='btn btn-success' style='width:130px; height:40px;'>เพิ่มหมวดหมู่</button></center>
+</nav><br>
+    <div class="container">
+  <center><h2><p class ="sansserif">แก้ไขหมวดหมู่</h2></center>
+  <form>
+      <div class="form-group">
+      <label for="pwd">หมวดหมู่:</label>
+      <input type="username" class="form-control" id="pwd" placeholder="Enter category" title = 'ใส่หมวดหมู่'>
+    </div>
+    </div>
+    <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
+      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">แก้ไขหมวดหมู่</button></center>
+      <div id="demo" class="collapse">
+  </div>
   </form>
-  <table class="table table-dark table-hover table-bordered" >
-    <thead>
-      <tr>
-        <th><center style="width:300px;">ชื่อหมวดหมู่</center></th>
-        <th colspan="3" style="width:300px;"><center>Modify</center></th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        require ('../managementsystem/category/querycate.php');
-       ?>
-    </tbody>
-  </table>
 </div>
-</body>
-</html>

@@ -49,9 +49,9 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
         </li>
     </ul>
      <ul class="nav justify-content-end" style="padding-left:47em">
-
-        <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "../loginSystem/logout.php" >ออกจากระบบ</a></p></button></ul>
-
+			 <form action="../loginSystem/logout.php">
+        <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button>
+			</form>
 </nav><br>
 <div class="container"><br>
 
