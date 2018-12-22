@@ -74,7 +74,7 @@
       <form method="get" action="loginSystem/login_stu.php">
               <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
               </form>
-              <form method="get" action="loginSystem/login_staf.php">
+              <form method="get" action="loginSystem/login_admin.php">
               <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
                   </form>
         <form method="get" action="statics.html">
