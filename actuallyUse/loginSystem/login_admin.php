@@ -49,7 +49,7 @@
 
       </div>
 
-        <form class="w3-container" action="loginSystem/getloginad.php" method="get"><p class ="sansserif"><big><strong>กรอกรหัสเพื่อเข้าใช้งาน</strong></big>
+        <form class="w3-container" action="getloginad.php" method="get"><p class ="sansserif"><big><strong>กรอกรหัสเพื่อเข้าใช้งาน</strong></big>
         <div class="w3-section">
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="username" required>

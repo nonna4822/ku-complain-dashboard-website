@@ -3,7 +3,7 @@
 //session
 session_start();
 
-require 'connect.php';
+ require '../connect.php';
 
 // Set php variables
 $username = mysqli_real_escape_string($conn,$_GET['username']);
@@ -22,7 +22,7 @@ if(mysqli_num_rows($result) == 1){
     $_SESSION['name'] = $row["adminname"];
 
     //go to homepage. ( logged )
-    header("Location: management.php"); //go to student view
+    header("Location: ../management.php"); //go to student view
     exit;
   }else {
     echo "username or password is wrong";
@@ -32,5 +32,4 @@ if(mysqli_num_rows($result) == 1){
 }
 
 mysqli_close($conn);
-
 ?>
