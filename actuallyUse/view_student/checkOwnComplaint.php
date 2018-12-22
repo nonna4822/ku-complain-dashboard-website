@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+
 
 <?php
 //session
 session_start();
 
-if(session_status() == 0){
-  header("location : ../loginSystem/login.php");
-  exit;
+$name = $_SESSION['name'];
+
+if(empty($name)){
+  echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
 }
 ?>
+
+<!DOCTYPE html>
 <html lang="en">
 
     <style>
