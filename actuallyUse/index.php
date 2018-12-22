@@ -71,7 +71,7 @@
     </ul>
 
     <ul class="nav justify-content-end" style="padding-left:30em">
-      <form method="get" action="loginSystem/login_stu.php">
+      <form method="get" action="loginSystem/login.php">
               <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
               </form>
               <form method="get" action="loginSystem/login_admin.php">
