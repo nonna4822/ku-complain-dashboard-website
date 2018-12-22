@@ -207,7 +207,7 @@ function showOwnComplaint(str) {
     <img src="../รูป/logo_KU-cb.jpg" width="210" height="210" >
   <a href="home_stu.php" title="หน้าแรก">Home</a>
   <a href="../complaint/add_complaint.php">แจ้งเรื่องร้องเรียน</a>
-  <a href="#">เช็คสถานะเรื่องร้องเรียน</a>
+  <a class = "active" href="#">เช็คสถานะเรื่องร้องเรียน</a>
 
   <!-- <a href="#about">About</a> -->
 </div>

@@ -1,3 +1,14 @@
+<?php
+  require 'getCateOption.php';
+
+  session_start();
+
+  if(session_status() == 0){
+    header("location : ../loginSystem/login.php");
+    exit;
+  }
+?>
+
 <html lang="en">
 
     <style>
@@ -166,18 +177,12 @@ div.content {
 <body class="w3-theme-l5">
 
 
-
-
-
-
-
 <div class="sidebar">
-    <img src="รูป/logo_KU-cb.jpg" width="210" height="210" >
-  <a href="home.html">Home</a>
-  <a href="addpost.html">แจ้งเรื่องร้องเรียน</a>
-  <a class="active" href="check.html">เช็คสถานะเรื่องร้องเรียน</a>
-
-  <a href="#about">About</a>
+    <img src="../รูป/logo_KU-cb.jpg" width="210" height="210" >
+  <a href="../view_student/home_stu.php">Home</a>
+  <a class="active" href="#">แจ้งเรื่องร้องเรียน</a>
+  <a href="../view_student/checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
+  <!-- <a href="#about">About</a> -->
 </div>
 
 <div class="w3-top" style="padding-left: 14.7%; ">
@@ -185,12 +190,12 @@ div.content {
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
      <label for="country" style="padding-left: 10; padding-top: 7; font-size: 25px; color: #ddd;"><strong>KASETSART UNIVERSITY</strong></label>
      <div class="w3-dropdown-hover w3-hide-small w3-right">
-    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;">Logout</button>
+    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;" onclick="window.location.href='../loginSystem/logout.php'" >Logout</button>
 
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white dropdown" title="My Account">
 
-      <img src="รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong>b5920559999</strong></label>
+      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong>b5920559999</strong></label>
 
   </a>
   <div class="w3-dropdown-hover w3-hide-small w3-right">
@@ -201,36 +206,30 @@ div.content {
 </div><br><br><br><br>
 
 
-<div class="container" style="padding-left: 15%">
-    <h2>กระทู้ร้องเรียนของนิสิต</h2>
-  <table class="table table-secondary table-hover">
-    <thead class="thead-dark">
-      <tr >
-        <th width="200" height="">หัวข้อเรื่อง</th>
-        <th >เนื้อหา</th>
-        <th width="200" ><center>สถานะ</center></th>
-          <th ><center>แก้ไข</center></th><th ><center>ลบ</center></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>เรื่องเน็ตไม่ดี</td>
-        <td >มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ </td>
-          <td><a href="confirmpost.html" style="color: green"><center>รับเรื่องแล้ว</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-      <tr>
-        <td>ห้องน้ำไม่สะอาด</td>
-        <td>ใช้ห้องน้ำละเหม็นมากๆ พื้นก็แฉะ</td>
-          <td ><a href="readpost.php" style="color: gray"><center>รอการรับรอง</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-      <tr>
-        <td>ตึกภาคสูงเกินไป</td>
-        <td>ตึกภาคบรรไดสูงมาก จนทำให้ไม่อยากขึ้นไปเรียน</td>
-          <td ><a href="readpost.php" style="color: gray"><center>รอการรับรอง</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<form class="" action="getAdd_complaint.php" method="post">
+  <label for="country" style="padding-left: 25%;">หมวดหมู่เรื่องร้องเรียน</label>
+
+  <?php
+    echo $selectObj;
+   ?>
+
+  <div class="form-group" style="padding-left: 25%">
+    <label for="comname">เรื่อง : </label>
+    <input type="text" class="form-control" id="comname" name ="comname" style="width:600px">
+  </div>
+
+  <div class="form-group" style="padding-left: 25%">
+    <label for="comdetail">รายละเอียด :</label>
+    <textarea class="form-control" rows="5" id="comdetail" style="width:800px" name ="comdetail"></textarea>
+  </div>
+
+  <ul class="nav justify-content-center" >
+    <button type="submit" class="btn btn-primary" >ส่งเรื่อง</button>
+  </ul>
+</form>
+
+
+
 
 
 
