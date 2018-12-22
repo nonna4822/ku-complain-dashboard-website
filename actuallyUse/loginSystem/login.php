@@ -56,12 +56,11 @@
           <label><b>Password</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password" required>
           <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
-          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
         </div>
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <form method="get" action="../indexSystem/index.php">
+          <form method="get" action="../index.php">
               <button onclick="document.getElementById('id01').style.display='none'" type="submit" class="w3-button w3-red"><p class ="sansserif">กลับสู่หน้าหลัก</button></form>
       </div>
 
