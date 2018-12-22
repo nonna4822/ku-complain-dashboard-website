@@ -5,7 +5,6 @@ require '../connect.php';
 
 $stuid = $_GET['stuid'];
 
-echo $stuid;
 $sql = "SELECT * FROM complaint WHERE stuid = '$stuid' "; //where missing .
 // $sql = "SELECT * FROM complaint"; //database testing
 $result = mysqli_query($conn,$sql);

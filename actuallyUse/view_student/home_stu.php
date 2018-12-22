@@ -1,15 +1,15 @@
-<?php
+<!DOCTYPE html>
 
+<?php
 //session
 session_start();
 
-if($_SESSION['name'] == ''){
-  header("location : login.php");
+if(session_status() == 0){
+  header("location : ../loginSystem/login.php");
   exit;
 }
-
- ?>
-
+// ?>
+<!-- 5339824014 -->
 
 <html lang="en">
 
@@ -139,8 +139,7 @@ div.content {
 <head>
   <title>Home</title>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="shortcut icon" href="รูป/8.png" />
+    <link rel="shortcut icon" href="../รูป/8.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -150,7 +149,7 @@ div.content {
 
 
 <script>
-function showComplaint(str) {
+function showOwnComplaint(str) {
     if (str == "") {
         document.getElementById("complaintTable").innerHTML = "";
         return;
@@ -176,10 +175,11 @@ function showComplaint(str) {
 
 </head>
 
-<body>
+
+    <body onload="showOwnComplaint('<?php echo $_SESSION['stuid'] ?>')">
 
 <div class="sidebar">
-    <img src="รูป/logo_KU-cb.jpg" width="200" height="200" >
+    <img src="../รูป/logo_KU-cb.jpg" width="200" height="200" >
   <a class="active" href="home.html">Home</a>
   <a href="?controller=complaint&action=newcomplaint">แจ้งเรื่องร้องเรียน</a>
     <a  href="check.html">เช็คสถานะเรื่องร้องเรียน</a>
@@ -191,12 +191,12 @@ function showComplaint(str) {
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
      <label for="country" style="padding-left: 10; padding-top: 7; font-size: 25px; color: #ddd;"><strong>KASETSART UNIVERSITY</strong></label>
      <div class="w3-dropdown-hover w3-hide-small w3-right">
-    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;"title="ออกจากระบบ" onclick="window.location.href='loginSystem/logout.php'">Logout</button>
+    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;"title="ออกจากระบบ" onclick="window.location.href='../loginSystem/logout.php'">Logout</button>
 
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white dropdown" title="My Account">
 
-      <img src="รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name'] ?></strong></label>
+      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name'] ?></strong></label>
 
   </a>
   <div class="w3-dropdown-hover w3-hide-small w3-right">
@@ -208,14 +208,14 @@ function showComplaint(str) {
 
 
 <div class="container" style="padding-left: 15%">
-  <div class="row">
+  <!-- <div class="row">
     <h2>กระทู้ร้องเรียน</h2>
     <select name="category" onchange="showComplaint(this.value)">
       <option value="47">การทุจริตภายในมหาวิทยาลัย</option>
       <option value="2">การซ่อมบำรุง</option>
       <option value="3">ซักถามข้อสงสัยทั่วไป</option>
     </select>
-  </div>
+  </div> -->
 
   <div id = "complaintTable" >
     <!-- <thead class="thead-dark">
