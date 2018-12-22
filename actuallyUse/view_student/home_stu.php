@@ -147,6 +147,8 @@ div.content {
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <script>
 function showComplaint(str) {
     if (str == "") {
@@ -165,11 +167,13 @@ function showComplaint(str) {
                 document.getElementById("complaintTable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","testShowComplaint.php?q="+str,true);
+        xmlhttp.open("GET","ajax_showOwnComplaint.php?sid="+str,true);
         xmlhttp.send();
     }
 }
 </script>
+
+
 </head>
 
 <body>

@@ -3,9 +3,9 @@
 require '../connect.php';
 
 
-$categoryId = intval($_GET['q']);
-
-$sql = "SELECT * FROM complaint WHERE catname = '$categoryId' "; //where missing .
+$sid = $_GET['sid'];
+$sql = "SELECT * FROM complaint WHERE sid = '$sid' "; //where missing .
+// $sql = "SELECT * FROM complaint "; //database testing
 $result = mysqli_query($conn,$sql);
 
 echo '<table class="table table-secondary table-hover">';
