@@ -70,13 +70,13 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
               <div class="col-xs-12 col-sm-4 col-md-4">
             <p align = "center">
           <img src="รูป/15.png" class="img-responsive" width="250" height="200">
-            <a href="#" class = "btn btn-success">จัดการหมวดหมู่</a></p>
+            <a href="?controller=category&action=index" class = "btn btn-success">จัดการหมวดหมู่</a></p>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-4">
             <p align = "center"><br>
           <img src="%E0%B8%A3%E0%B8%B9%E0%B8%9B/complaints.png" class="img-responsive" width="250" height="200">
             <a href="#" class = "btn btn-success">จัดการเรื่องร้องเรียน</a></p>
-              </div>
+					</div>
 </div><br>
 <?php require_once("routes.php"); ?>
 </body>

@@ -1,5 +1,7 @@
 <?php
-$controllers = array('pages'=>['home','error'],'complaint'=>['newcomplaint','addcomplaint','updateForm','update','deleteConfirm','delete'],'department'=>['index','newdepartment','adddepartment','updateForm','update','deleteConfirm','delete']);
+$controllers = array('pages'=>['home','error'],
+'complaint'=>['newcomplaint','addcomplaint','updateForm','update','deleteConfirm','delete'],
+'category'=>['index','newdepartment','adddepartment','updateForm','update','deleteConfirm','delete']);
 function call($controller, $action){
 	/*echo "routes to ".$controller."-".$action."<br>";*/ require_once("controllers/".$controller."_controller.php");
 	switch($controller)
@@ -10,9 +12,9 @@ function call($controller, $action){
      require_once("model/categoryModel.php");
 		$controller = new ComplaintController();
 		break;
-        case "department":
-        require_once("model/departmentModel.php");
-        $controller = new departmentController();
+        case "category":
+        require_once("model/categoryModel.php");
+        $controller = new categoryController();
 				break;
 	}
 	$controller->{$action}();
