@@ -5,7 +5,7 @@ require '../connect.php';
 
 $categoryName = $_GET['q'];
 
-<<<<<<< HEAD
+
 // $sql = "SELECT * FROM complaint "; //for database testing
 $sql = "SELECT * FROM complaint WHERE catname = '$categoryName'"; //where missing .
 =======

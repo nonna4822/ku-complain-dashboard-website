@@ -1,3 +1,7 @@
+ <?php
+  require 'indexSystem/getCateOption.php';
+  ?>
+
 <html lang="en">
     <style>
         body{background-image: url(รูป/03-897.jpg)}
@@ -16,79 +20,81 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
     <script>
-function showComplaint(str) {
-    if (str == "") {
-        document.getElementById("complaintTable").innerHTML = "";
-        return;
-    } else {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
+    function showComplaint(str) {
+        document.getElementById("display").innerHTML = str;
+        if (str == "") {
+            document.getElementById("display").innerHTML = "no data in str";
+            document.getElementById("complaintTable").innerHTML = "no data in str";
+            return;
         } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("complaintTable").innerHTML = this.responseText;
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-        };
-        xmlhttp.open("GET","../actuallyUse/Showplain.php?q="+str,true);
-        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("complaintTable").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET","indexSystem/ajax_showComplaint.php?q="+str,true);
+            xmlhttp.send();
+        }
     }
-}
-</script>
+    </script>
+
+
 </head>
-    
-<body> 
-    
+
+<body ononline="showComplaint(การเรียน)">
+
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
-    
+
     <ul class="nav">
         <li class="nav-item">
             <img src="รูป/8.png" width="100" height="85">
-            
+
         </li>
     </ul>
-    
+
     <ul class="nav justify-content-end" style="padding-left:1em">
         <li class="nav-item ">
             <h2 id="K1"><p class ="sansserif">ระบบจัดการเรื่องร้องเรียนสำหรับนิสิต</h2>
             <h4 id="C1"><p class ="sansserif">ภาควิชาวิศวกรรมคอมพิวเตอร์</h4>
         </li>
     </ul>
-    
+
     <ul class="nav justify-content-end" style="padding-left:30em">
-<form method="get" action="login.php">
-        <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
-        </form>
-        <form method="get" action="login1.php">
-        <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
-            </form>
+      <form method="get" action="../loginSystem/login_stu.php">
+              <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">เข้าสู่ระบบ</p></button>
+              </form>
+              <form method="get" action="../loginSystem/login_staf.php">
+              <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ผู้ดูแลเข้าใช้ระบบ</p></button>
+                  </form>
         <form method="get" action="statics.html">
         <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">สถิติ</p></button>
         </form>
     <div class="w3-dropdown-hover">
-    <button class="btn btn-outline-primary">หมวดหมู่</button>
-    <div class="w3-dropdown-content w3-bar-block w3-border" onclick="showComplaint(str)">
-      <a href="login.html" class="w3-bar-item w3-button">หมวดการเรียน</a>
-      <a href="#" class="w3-bar-item w3-button">หมวดทั่วไป</a>
-      <a href="#" class="w3-bar-item w3-button">หมวดอื่นๆ</a>
-    </div>
+
+      <?php
+        echo $selectObj;
+        ?>
+
   </div>
         </ul>
 
 </nav><br>
 
-    
-    
-    
-    
+
 <div class="container"><br><br><br>
 
-    <center><h2><p class ="sansserif">เรื่องร้องเรียน</p></h2></center><br>
+    <center><h2><p class ="sansserif">เรื่องร้องเรียน หมวดหมู่ :  <span id = "display" > this text for display</span></p></h2></center><br>
     <form action="/action_page.php">
    <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" name="search">
@@ -96,48 +102,10 @@ function showComplaint(str) {
         <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i></button>
       </div>
         </div>
-    <h2><p class ="sansserif">หมวดหมู่ที่ 1 : </h2><br>
       <center>
-      <div class="list-group" style="width:800px">     
-          
-          <table class="table table-bordered table-secondary table-hover">
-              <thead class="thead-dark">
-                  <tr>
-                      <th><center><p class ="sansserif">กระทู้ร้องเรียน</center></th>
-                      <th><center><p class ="sansserif">เนื้อหา</center></th>
-                      <th><center><p class ="sansserif">วันที่</center></th>
-                  </tr>
-              </thead>
-              
-              <tbody>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 1</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องหาตึกภาคไม่เจอ</td><td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 2</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องการใช้คอมพิวเตอร์ไม่เป็น</td> <td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 3</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องเรียนเก่งเกินไป</td><td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 1</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องหาตึกภาคไม่เจอ</td><td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 2</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องการใช้คอมพิวเตอร์ไม่เป็น</td><td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-                  <tr>
-                      <td><p class ="sansserif">หัวข้อปัญหา 3</td>
-                      <td><p class ="sansserif">มีปัญหาเรื่องเรียนเก่งเกินไป</td><td><p class ="sansserif">1/12/2078</td>
-                  </tr>
-              </tbody>
-          </table>
-          
-          </div></center>
+      <div id="complaintTable" class="list-group" style="width:800px">
+          <!--  display table -->
+        </div></center>
     </form>
 </div>
 

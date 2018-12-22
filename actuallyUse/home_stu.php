@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 //session
 session_start();
@@ -148,8 +147,6 @@ div.content {
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 <script>
 function showComplaint(str) {
     if (str == "") {
@@ -173,8 +170,6 @@ function showComplaint(str) {
     }
 }
 </script>
-
-
 </head>
 
 <body>
@@ -208,10 +203,6 @@ function showComplaint(str) {
 </div><br><br><br><br>
 
 
-=======
-require('X.php');
-?>
->>>>>>> 897fbbd051820a0a182bdc30eedb347e7fb89557
 <div class="container" style="padding-left: 15%">
   <div class="row">
     <h2>กระทู้ร้องเรียน</h2>
@@ -236,3 +227,39 @@ require('X.php');
 
 
 </div>
+
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+        var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+</body>
+</html>

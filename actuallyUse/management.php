@@ -1,3 +1,11 @@
+<?php
+if(isset($_GET['controller'])&&isset($_GET['action']))
+{	$controller = $_GET['controller'];
+	$action = $_GET['action'];
+}else
+{	$controller = 'pages';
+	$action = 'home';
+} ?>
 <html lang="en">
     <style >
         body{background-image: url(รูป/03-897.jpg)}
@@ -19,21 +27,21 @@
             padding: 10px;
         }
     </style>
-    
+
 </head>
-    
-<body> 
-    
+
+<body>
+
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    
+
     <ul class="nav">
         <li class="nav-item">
             <img src="รูป/8.png" width="100" height="85">
-            
+
         </li>
     </ul>
-    
+
     <ul class="nav justify-content-end" style="padding-left:1em">
         <li class="nav-item ">
             <h2 id="K1"><p class ="sansserif">ระบบจัดการเรื่องร้องเรียนสำหรับนิสิต</h2>
@@ -45,11 +53,6 @@
         <button type="button" class="btn btn-outline-primary"><p class ="sansserif"><a href = "index.html" >ออกจากระบบ</a></p></button></ul>
 
 </nav><br>
-
-    
-    
-    
-    
 <div class="container"><br>
 
     <center><h2><p class ="sansserif">การจัดการ</p></h2></center><br>
@@ -74,4 +77,7 @@
           <img src="%E0%B8%A3%E0%B8%B9%E0%B8%9B/complaints.png" class="img-responsive" width="250" height="200">
             <a href="#" class = "btn btn-success">จัดการเรื่องร้องเรียน</a></p>
               </div>
-</div>
+</div><br>
+<?php require_once("routes.php"); ?>
+</body>
+</html>
