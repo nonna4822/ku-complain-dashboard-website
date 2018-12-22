@@ -16,30 +16,17 @@ $comdetail = mysqli_real_escape_string($conn, $_POST['comdetail']);//
 $currenttime = date('Y-m-d H:i:s');
 $stuid = $_SESSION['stuid'];
 
-echo $stuid;
-
 $sql = "INSERT INTO `complaint` (`comid`,
    `comname`, `comdetail`, `catname`, `stuid`,
    `score`, `statusid`, `datetimes`, `timetouch`)
    VALUES (NULL, '$comname', '$comdetail', '$catname',
      '$stuid', '0', '0', '$currenttime', NULL);";
 
-echo $sql;
-// $sql = "UPDATE `staff` SET `firstname` = '$firstname',
-//  `lastname` = '$lastname', `birthday` = '$birthday',
-//   `tel` = '$tel', `address` = '$address',
-//     `province` = '$province', `zipcode` = '$zipcode',
-//       `gender` = '$gender',
-//         `graduate` = '$graduate' WHERE `cardno` = '$cardno'";
-//
-// if (!mysqli_query($con,$sql)) {
-//     echo('Error can\'update : ' . mysqli_error($con));
-//     echo "<script>setTimeout(\"location.href = 'staffview.php';\",3000);</script>";
-// }else {
-//   echo "Update Complate !";
-//   echo "<script>setTimeout(\"location.href = 'staffview.php';\",3000);</script>";
-// }
-
-echo "Narawit";
+if (!mysqli_query($conn,$sql)) {
+    echo('Error can\'update : ' . mysqli_error($conn));
+}else {
+  echo "ส่งคำร้องเรียนสำเร็จแล้วค่ะ กรุณารอสักครู่ ระบบกำลังดำเนินการพาท่านไปยังหน้าร้อนเรียน";
+  echo "<script>setTimeout(\"location.href = '../view_student/checkOwnComplaint.php';\",2000);</script>";
+}
 
 ?>

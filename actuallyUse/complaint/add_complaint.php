@@ -195,7 +195,7 @@ div.content {
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white dropdown" title="My Account">
 
-      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong>b5920559999</strong></label>
+      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name']; ?></strong></label>
 
   </a>
   <div class="w3-dropdown-hover w3-hide-small w3-right">
@@ -205,6 +205,8 @@ div.content {
  </div>
 </div><br><br><br><br>
 
+
+<h1>กรอกรายละเอียดการร้องเรียน</h1>
 
 <form class="" action="getAdd_complaint.php" method="post">
   <label for="country" style="padding-left: 25%;">หมวดหมู่เรื่องร้องเรียน</label>
