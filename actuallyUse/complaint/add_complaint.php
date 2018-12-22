@@ -1,12 +1,12 @@
 <?php
-  require 'getCateOption.php';
+//session
+session_start();
 
-  session_start();
+$name = $_SESSION['name'];
 
-  if(session_status() == 0){
-    header("location : ../loginSystem/login.php");
-    exit;
-  }
+if(empty($name)){
+  echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
+}
 ?>
 
 <html lang="en">

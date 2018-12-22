@@ -1,6 +1,6 @@
 <?php
   session_start();
-  // destroy the session
+  $_SESSION = array();
   session_destroy();
 
   header("Location: ../index.php"); //go to homepage
