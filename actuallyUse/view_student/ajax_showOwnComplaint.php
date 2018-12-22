@@ -4,8 +4,10 @@ require '../connect.php';
 
 
 $sid = $_GET['sid'];
-$sql = "SELECT * FROM complaint WHERE sid = '$sid' "; //where missing .
-// $sql = "SELECT * FROM complaint "; //database testing
+
+echo $sid;
+$sql = "SELECT * FROM complaint WHERE stuid = '$sid' "; //where missing .
+// $sql = "SELECT * FROM complaint"; //database testing
 $result = mysqli_query($conn,$sql);
 
 echo '<table class="table table-secondary table-hover">';
@@ -21,7 +23,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row['score'] . "</td>";
     echo "<td>" . $row['comname'] . "</td>";
     echo "<td>" . $row['datetimes'] . "</td>";
-    echo "<td>" . "button" . "</td>";
+    echo "<td>" . $row['stuid'] . "</td>";
     echo "</tr>";
 }
 echo "</thead>";
@@ -29,4 +31,5 @@ echo "</table>";
 
 
 mysqli_close($conn);
+
 ?>
