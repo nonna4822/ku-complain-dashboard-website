@@ -1,7 +1,3 @@
-<?php
-  require ('../managementsystem/category/querycate.php');
- ?>
-
 <html lang="en">
     <style>
         body{background-image: url(../รูป/03-897.jpg)}
@@ -60,7 +56,7 @@
     </thead>
     <tbody>
       <?php
-        echo $selectObj;
+        require ('../managementsystem/category/querycate.php');
        ?>
     </tbody>
   </table>
