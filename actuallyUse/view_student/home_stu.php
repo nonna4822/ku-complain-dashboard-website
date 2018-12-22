@@ -8,7 +8,10 @@ if(session_status() == 0){
   header("location : ../loginSystem/login.php");
   exit;
 }
-// ?>
+
+require 'getCateOption.php';
+
+?>
 <!-- 5339824014 -->
 
 <html lang="en">
@@ -166,7 +169,7 @@ function showOwnComplaint(str) {
                 document.getElementById("complaintTable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET","ajax_showOwnComplaint.php?stuid="+str,true);
+        xmlhttp.open("GET","ajax_showAllComplaint.php?category="+str,true);
         xmlhttp.send();
     }
 }
@@ -176,14 +179,14 @@ function showOwnComplaint(str) {
 </head>
 
 
-    <body onload="showOwnComplaint('<?php echo $_SESSION['stuid'] ?>')">
+    <body onload="showOwnComplaint('การเรียน')">
 
 <div class="sidebar">
     <img src="../รูป/logo_KU-cb.jpg" width="200" height="200" >
-  <a class="active" href="home.html">Home</a>
-  <a href="?controller=complaint&action=newcomplaint">แจ้งเรื่องร้องเรียน</a>
+  <a  href="#">Home</a>
+  <a href="../complaint/add_complaint.php">แจ้งเรื่องร้องเรียน</a>
     <a  href="checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
-  <a href="#about">About</a>
+  <!-- <a href="#about">About</a> -->
 </div>
 
 <div class="w3-top" style="padding-left: 14.7%; ">
@@ -216,6 +219,11 @@ function showOwnComplaint(str) {
       <option value="3">ซักถามข้อสงสัยทั่วไป</option>
     </select>
   </div> -->
+
+  <?php
+    echo $selectObj;
+   ?>
+
 
   <div id = "complaintTable" >
     <!-- <thead class="thead-dark">
