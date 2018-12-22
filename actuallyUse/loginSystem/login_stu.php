@@ -61,7 +61,7 @@
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <form method="get" action="index.html">
+          <form method="get" action="../index.php">
               <button onclick="document.getElementById('id01').style.display='none'" type="submit" class="w3-button w3-red"><p class ="sansserif">กลับสู่หน้าหลัก</button></form>
       </div>
 
