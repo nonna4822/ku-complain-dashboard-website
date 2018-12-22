@@ -3,6 +3,6 @@
   // destroy the session
   session_destroy();
 
-  header("Location: indexSystem/index.php"); //go to homepage
+  header("Location: ../index.php"); //go to homepage
   exit;
  ?>
