@@ -9,10 +9,9 @@ while($row = mysqli_fetch_array($result)) {
       <td>".$row['comname']."</td>
       <td>".$row['catname']."</td>
       <td>".$row['datetimes']."</td>
-      <form action = '../management/deletecomplaint.php'>
-      <td><center><button type='submit' class='btn btn-outline-danger' style='width:100px; height:40px;'>ลบ</button></center></td>
-      </form>
-    </tr>";
+      ".
+      "<td><center><button class='btn btn-outline-danger' style='width:100px; height:40px;' onclick=\"window.location = '../management/deletecomplaint.php?comid=" . $row['comid'] ."';\">ลบ</button></center></td>".
+    "</tr>";
 }
 echo $selectObj;
 

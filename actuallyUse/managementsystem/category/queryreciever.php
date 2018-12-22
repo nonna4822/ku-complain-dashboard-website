@@ -9,14 +9,10 @@ while($row = mysqli_fetch_array($result)) {
       <td>".$row['rid']."</td>
       <td>".$row['rname']."</td>
       <td>".$row['rLname']."</td>
-      <td>".$row['catname']."</td>
-      <form action = '../management/updaterecipient.php'>
-      <td><center><button type='submit' class='btn btn-outline-warning' style='width:100px; height:40px;'>แก้ไข</button></center></td>
-      </form>
-      <form action = '../management/deleterecipient.php'>
-      <td><center><button type='submit' class='btn btn-outline-danger' style='width:100px; height:40px;'>ลบ</button></center></td
-      </form>
-    </tr>";
+      <td>".$row['catname']."</td>".
+      "<td><center><button class='btn btn-outline-warning' style='width:100px; height:40px;' onclick=\"window.location = '../management/updaterecipient.php?rid=" . $row['rid'] ."';\">แก้ไข</button></center></td>".
+      "<td><center><button class='btn btn-outline-danger' style='width:100px; height:40px;' onclick=\"window.location = '../management/deleterecipient.php?rid=" . $row['rid'] ."';\">ลบ</button></center></td>".
+    "</tr>";
 }
 echo $selectObj;
 

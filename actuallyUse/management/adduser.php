@@ -42,28 +42,26 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">เพิ่มผู้ใช้</h2></center>
-  <form>
+  <form method = 'get' action = '../managementsystem/Add_user.php'>
       <div class="form-group">
       <label for="pwd">Username:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter username" title="ใส่ชื่อผู้ใช้">
+      <input type="username" class="form-control" name = 'stuid' id="pwd" placeholder="Enter username" title="ใส่ชื่อผู้ใช้">
     </div>
 
       <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" title="ใส่รหัส">
+      <input type="password" class="form-control" name = 'spassword' id="pwd" placeholder="Enter password" title="ใส่รหัส">
     </div>
        <div class="form-group">
       <label for="pwd">ชื่อ:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter name" title="ใส่นามสกุล">
+      <input type="text" class="form-control"  name = 'stuname' id="pwd" placeholder="Enter name" title="ใส่นามสกุล">
     </div>
        <div class="form-group">
       <label for="pwd">นามสกุล:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter lastname" title="ใส่นามสกุล">
+      <input type="text" class="form-control" name = 'stuLname' id="pwd" placeholder="Enter lastname" title="ใส่นามสกุล">
     </div>
     <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มผู้ใช้</button></center>
-      <div id="demo" class="collapse">
-    <center>ใส่รหัสผิด</center>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มผู้ใช้</button></center>
   </div>
   </form>
 </div>

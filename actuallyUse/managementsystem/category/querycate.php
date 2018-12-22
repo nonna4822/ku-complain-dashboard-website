@@ -6,14 +6,10 @@ $result = mysqli_query($conn,$sql);
 
 while($row = mysqli_fetch_array($result)) {
     $selectObj = $selectObj."<tr>
-      <td>".$row['catname']."</td>
-      <form action = '../management/updatecategory.php'>
-      <td><center><button type='submit' class='btn btn-outline-warning' style='width:100px; height:40px;'>แก้ไข</button></center></td>
-      </form>
-      <form action = '../management/deletecategory.php'>
-      <td><center><button type='submit' class='btn btn-outline-danger' style='width:100px; height:40px;'>ลบ</button></center></td>
-      </form>
-    </tr>";
+      <td>".$row['catname']."</td>".
+      "<td><center><button class='btn btn-outline-warning' style='width:100px; height:40px;' onclick=\"window.location = '../management/updatecategory.php?catname=" . $row['catname'] ."';\">แก้ไข</button></center></td>".
+      "<td><center><button class='btn btn-outline-danger' style='width:100px; height:40px;' onclick=\"window.location = '../management/deletecategory.php?catname=" . $row['catname'] ."';\">ลบ</button></center></td>".
+    "</tr>";
 }
 echo $selectObj;
 
