@@ -6,6 +6,8 @@
     header("location : ../loginSystem/login.php");
     exit;
   }
+
+  $comid = $_GET['comid'];
 ?>
 
 <html lang="en">
@@ -361,12 +363,13 @@ h1 { font-size: 1.5em; margin: 10px; }
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
      <label for="country" style="padding-left: 10; padding-top: 7; font-size: 25px; color: #ddd;"><strong>KASETSART UNIVERSITY</strong></label>
      <div class="w3-dropdown-hover w3-hide-small w3-right">
-    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;">Logout</button>
+    <button onclick="location.href='../loginSystem/logout.php'" class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;">Logout</button>
 
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white dropdown" title="My Account">
 
-      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong>b5920559999</strong></label>
+      <img src="../รูป/4.jpg" class="w3-circle dropbtn"
+      style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name']; ?></strong></label>
 
   </a>
   <div class="w3-dropdown-hover w3-hide-small w3-right">
@@ -377,10 +380,9 @@ h1 { font-size: 1.5em; margin: 10px; }
 </div><br><br><br><br>
 
 
-
 <div class="container" style="padding-left: 15%">
   <div class="card bg-primary text-white">
-    <div class="card-body"><strong>b5920550123 :: เรื่องเน็ตไม่ดี</strong>
+    <div class="card-body"><strong><?php echo $_SESSION['name']; ?> :: เรื่องเน็ตไม่ดี</strong>
 
 
       </div>
@@ -390,9 +392,9 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 
     <div class="card-body" style="padding-left: 8%">มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้</div>
-<div id="myDIV" style="padding-left: 3%">
+<!-- <div id="myDIV" style="padding-left: 3%">
   <button class="btn"><i class="fa fa-thumbs-up"></i> Like</button>
-</div><br>
+</div><br> -->
 
   </div>
 </div><br>

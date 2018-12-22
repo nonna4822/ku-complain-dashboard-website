@@ -29,7 +29,7 @@ while($row = mysqli_fetch_array($result)) {
     }else {
       echo "<td>" . กำลังพิจารณา . "</td>";
     }
-    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php'> Click </a>" . "</td>";
+    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php?comid=".$row['comid']."'> Click </a>" . "</td>";
     echo "</tr>";
 }
 echo "</thead>";

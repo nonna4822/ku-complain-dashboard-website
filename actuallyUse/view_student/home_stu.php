@@ -20,9 +20,6 @@ require 'getCateOption.php';
         h2#K1{color:darkcyan}
         h4#C1{color: aliceblue}
 
-
-
-
 .topnav {
     background-color:darkslategray;
     overflow: hidden;
