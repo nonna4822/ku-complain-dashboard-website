@@ -1,4 +1,5 @@
 <?php
+
 //session
 session_start();
 
@@ -7,18 +8,32 @@ $name = $_SESSION['name'];
 if(empty($name)){
   echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
 }
+
+echo $_SESSION['name'] . "รับผิดชอบเรื่อง" .$_SESSION['catname'];
+
 ?>
+
+<!DOCTYPE html>
+
+<?php
+//session
+session_start();
+
+if(session_status() == 0){
+  header("location : ../loginSystem/login.php");
+  exit;
+}
+
+require 'getCateOption.php';
+
+?>
+<!-- 5339824014 -->
 
 <html lang="en">
 
     <style>
         h2#K1{color:darkcyan}
         h4#C1{color: aliceblue}
- p.sansserif {
-    font-family: 'Kanit', sans-serif;
-    }
-
-
 
 .topnav {
     background-color:darkslategray;
@@ -86,9 +101,9 @@ if(empty($name)){
 }
 
 .sidebar {
-  margin: -10;
-  padding-left: 3;
-  width: 210px;
+  margin: 0;
+  padding: 0;
+  width: 200px;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
@@ -103,7 +118,7 @@ if(empty($name)){
 }
 
 .sidebar a.active {
-  background-color: darkcyan;
+  background-color:darkcyan;
   color: white;
 }
 
@@ -134,54 +149,55 @@ div.content {
     float: none;
   }
 }
-
-        .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
     </style>
 
 <head>
   <title>Home</title>
   <meta charset="utf-8">
+    <link rel="shortcut icon" href="../รูป/8.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script>
+function showOwnComplaint(str) {
+    if (str == "") {
+        document.getElementById("complaintTable").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("complaintTable").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","ajax_showAllComplaint.php?category="+str,true);
+        xmlhttp.send();
+    }
+}
+</script>
+
+
 </head>
 
-<body class="w3-theme-l5">
 
+    <body onload="showOwnComplaint('การเรียน')">
 
 <div class="sidebar">
-    <img src="../รูป/logo_KU-cb.jpg" width="210" height="210" >
-  <a href="../view_student/home_stu.php">Home</a>
-  <a class="active" href="#">แจ้งเรื่องร้องเรียน</a>
-  <a href="../view_student/checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
+    <img src="../รูป/logo_KU-cb.jpg" width="200" height="200" >
+  <a  class = "active" href="#">Home</a>
+  <a href="../complaint/add_complaint.php">แจ้งเรื่องร้องเรียน</a>
+    <a  href="checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
   <!-- <a href="#about">About</a> -->
 </div>
 
@@ -190,12 +206,12 @@ div.content {
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
      <label for="country" style="padding-left: 10; padding-top: 7; font-size: 25px; color: #ddd;"><strong>KASETSART UNIVERSITY</strong></label>
      <div class="w3-dropdown-hover w3-hide-small w3-right">
-    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;" onclick="window.location.href='../loginSystem/logout.php'" >Logout</button>
+    <button class="w3-button w3-padding-large" style="height:53px;width:100px; font-size: 15; padding-top: 10%;"title="ออกจากระบบ" onclick="window.location.href='../loginSystem/logout.php'">Logout</button>
 
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white dropdown" title="My Account">
 
-      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name']; ?></strong></label>
+      <img src="../รูป/4.jpg" class="w3-circle dropbtn" style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name'] ?></strong></label>
 
   </a>
   <div class="w3-dropdown-hover w3-hide-small w3-right">
@@ -206,32 +222,35 @@ div.content {
 </div><br><br><br><br>
 
 
-
-
-<form class="" action="getAdd_complaint.php" method="post">
-  <label for="country" style="padding-left: 25%;">หมวดหมู่เรื่องร้องเรียน</label>
+<div class="container" style="padding-left: 15%">
+  <!-- <div class="row">
+    <h2>กระทู้ร้องเรียน</h2>
+    <select name="category" onchange="showComplaint(this.value)">
+      <option value="47">การทุจริตภายในมหาวิทยาลัย</option>
+      <option value="2">การซ่อมบำรุง</option>
+      <option value="3">ซักถามข้อสงสัยทั่วไป</option>
+    </select>
+  </div> -->
 
   <?php
     echo $selectObj;
    ?>
 
-  <div class="form-group" style="padding-left: 25%">
-    <label for="comname">เรื่อง : </label>
-    <input type="text" class="form-control" id="comname" name ="comname" style="width:600px">
+
+  <div id = "complaintTable" >
+    <!-- <thead class="thead-dark">
+      <tr >
+        <th width="200" height="">หัวข้อเรื่อง</th>
+        <th >เนื้อหา</th>
+        <th width="200" >Option</th>
+      </tr>
+    </thead>
+    <tbody >
+    </tbody> -->
   </div>
 
-  <div class="form-group" style="padding-left: 25%">
-    <label for="comdetail">รายละเอียด :</label>
-    <textarea class="form-control" rows="5" id="comdetail" style="width:800px" name ="comdetail"></textarea>
-  </div>
 
-  <ul class="nav justify-content-center" >
-    <button type="submit" class="btn btn-primary" >ส่งเรื่อง</button>
-  </ul>
-</form>
-
-
-
+</div>
 
 
 
