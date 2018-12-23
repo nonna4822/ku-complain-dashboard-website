@@ -207,6 +207,8 @@ function showComplaint(str) {
 
 <div class="container" style="padding-left: 15%">
 
+  <h1> การร้องเรียนที่คุณรับผิดชอบ </h1>
+
   <div id = "complaintTable" >
     <!-- show table this -->
   </div>

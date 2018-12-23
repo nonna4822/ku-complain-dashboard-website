@@ -25,11 +25,12 @@
   $sql1 =  "UPDATE complaint SET score = score + 1 WHERE comid = '$comid'";
   $result = mysqli_query($conn,$sql1);
 
-  //check UPDATE
+  //see the complaint
+  //by staff
   if( substr( strtolower( $username ), 0, 5 ) === "staff"){
     $sql1 =  "UPDATE complaint SET receiversee = 1 , statusid = 2 WHERE comid = '$comid'";
     $result = mysqli_query($conn,$sql1);
-  }else if( $row['stuid'] == $username ){
+  }else if( $row['stuid'] == $username ){ //by user
     $sql1 =  "UPDATE complaint SET studentsee = 1 WHERE comid = '$comid'";
     $result = mysqli_query($conn,$sql1);
   }
@@ -467,13 +468,13 @@ function getTextAreaVal(){
       style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name']; ?></strong></label>
 
   </a>
-  
+
  </div>
 </div><br><br><br><br>
 
 <!-- show request -->
 <div class="container" style="padding-left: 15%">
-  <div class="card card text-white bg-dark mb-3 text-white">
+  <div class="card text-white bg-dark mb-3 text-white">
     <div class="card-body"><strong><?php echo $row['stuid']; ?> :: <?php echo $row['comname']; ?></strong></div>
     <div class="card-body" style="padding-left: 8%"><?php echo $row['comdetail']; ?></div>
   </div>

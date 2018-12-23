@@ -34,7 +34,7 @@ if( substr( strtolower( $username ), 0, 5 ) === "staff"){
   $sql1 =  "UPDATE complaint SET statusid = 3 , studentsee = 0 WHERE comid = '$comid'";
   $result = mysqli_query($conn,$sql1);
 }else if( $row['stuid'] == $username ){ //by owner
-  $sql1 =  "UPDATE complaint SET receiversee = 0 WHERE comid = '$comid'";
+  $sql1 =  "UPDATE complaint SET receiversee = 0 , statusid = 1 WHERE comid = '$comid'";
   $result = mysqli_query($conn,$sql1);
 }else { //by another
   $sql1 =  "UPDATE complaint SET receiversee = 0 , studentsee = 0 WHERE comid = '$comid'";

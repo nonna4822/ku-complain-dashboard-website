@@ -6,7 +6,7 @@ require '../connect.php';
 $categoryName = $_GET['category'];
 
 // $sql = "SELECT * FROM complaint "; //for database testing
-$sql = "SELECT * FROM complaint WHERE catname = '$categoryName'"; //where missing .
+$sql = "SELECT * FROM complaint WHERE catname = '$categoryName' ORDER BY datetimes DESC"; //where missing .
 // $sql = "SELECT * FROM complaint"; //where missing .
 
 $result = mysqli_query($conn,$sql);

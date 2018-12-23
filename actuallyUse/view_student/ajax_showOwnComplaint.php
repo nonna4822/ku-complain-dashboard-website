@@ -16,8 +16,9 @@ echo  '<th width="200" height="">จำนวนการเข้าชม</th>
 echo  '<th width="200" >เรื่องร้องเรียน</th>';
 echo  '<th width="200" >วันที่</th>';
 echo  '<th width="200" >สถานการดำเนินการ</th>';
-echo  '<th width="200" >ดูรายละเอียด</th>';
 echo  '<th width="200" >การตอบกลับ</th>';
+echo  '<th width="200" >ดูรายละเอียด</th>';
+echo  '<th width="200" >ลบการร้องขอ</th>';
 echo '</tr>';
 while($row = mysqli_fetch_array($result)) { //studentsee
     echo "<tr>";
@@ -32,13 +33,15 @@ while($row = mysqli_fetch_array($result)) { //studentsee
     }else {
       echo "<td style=\"color : green;\">" . ดำเนินการเสร็จแล้ว . "</td>";
     }
-    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php?comid=".$row['comid']."'> Click </a>" . "</td>";
-    //show table
+    //show update
     if($row['studentsee'] == '0'){
       echo "<td style=\"color : blue;\">" . มีการupdate  . "</td>";
     }else if($row['studentsee'] == '1'){
       echo "<td >" . ไม่มีการupdate . "</td>";
     }
+    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php?comid=".$row['comid']."'> Click </a>" . "</td>";
+    //delete
+    echo "<td>" . "<a style=\"color:red\" href = 'delete_complaint.php?comid=".$row['comid']."'> Delete </a>" . "</td>";
     echo "</tr>";
 }
 echo "</thead>";

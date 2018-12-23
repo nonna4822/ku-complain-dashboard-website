@@ -17,14 +17,22 @@ echo '<tr >';
 echo  '<th width="200" >จำนวนการเข้าชม</th>';
 echo  '<th width="200" >การร้องเรียน</th>';
 echo  '<th width="200" >วันที่</th>';
+echo  '<th width="200" >การอัปเดท</th>';
 echo  '<th width="200" >ดูรายละเอียด</th>';
+
 echo '</tr>';
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['score'] . "</td>";
     echo "<td>" . $row['comname'] . "</td>";
     echo "<td>" . $row['datetimes'] . "</td>";
+    if($row['receiversee'] == '0'){
+      echo "<td style=\"color : blue;\">" . มีการupdate  . "</td>";
+    }else if($row['receiversee'] == '1'){
+      echo "<td style=\"color : green;\">" . คุณเห็นการร้องเรียนนี้แล้ว . "</td>";
+    }
     echo "<td>" . "<a href = '../complaint/detail_a_complaint.php?comid=".$row['comid']."'> Click </a>" . "</td>";
+
     echo "</tr>";
 }
 echo "</thead>";

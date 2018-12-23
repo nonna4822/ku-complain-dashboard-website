@@ -252,43 +252,7 @@ function showOwnComplaint(str) {
 
 <div class="container" style="padding-left: 15%">
     <h2>กระทู้ร้องเรียนของนิสิต</h2>
-  <!-- <table class="table table-secondary table-hover">
-    <thead class="thead-dark">
-      <tr >
-        <th width="200" height="">หัวข้อเรื่อง</th>
-        <th >เนื้อหา</th>
-        <th width="200" ><center>สถานะ</center></th>
-          <th ><center>แก้ไข</center></th><th ><center>ลบ</center></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>เรื่องเน็ตไม่ดี</td>
-        <td >มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ </td>
-          <td><a href="confirmpost.html" style="color: green"><center>รับเรื่องแล้ว</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-      <tr>
-        <td>ห้องน้ำไม่สะอาด</td>
-        <td>ใช้ห้องน้ำละเหม็นมากๆ พื้นก็แฉะ</td>
-          <td ><a href="readpost.php" style="color: gray"><center>รอการรับรอง</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-      <tr>
-        <td>ตึกภาคสูงเกินไป</td>
-        <td>ตึกภาคบรรไดสูงมาก จนทำให้ไม่อยากขึ้นไปเรียน</td>
-          <td ><a href="readpost.php" style="color: gray"><center>รอการรับรอง</center></a></td><th ><center><a href = "#">แก้ไข</a></center></th><th ><center><a href = "#">ลบ</a></center></th>
-      </tr>
-    </tbody>
-  </table> -->
   <div id = "complaintTable" >
-    <!-- <thead class="thead-dark">
-      <tr >
-        <th width="200" height="">หัวข้อเรื่อง</th>
-        <th >เนื้อหา</th>
-        <th width="200" >Option</th>
-      </tr>
-    </thead>
-    <tbody >
-    </tbody> -->
   </div>
 </div>
 
