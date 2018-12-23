@@ -1,0 +1,3 @@
+echo "<td style=\"color : red;\">" . มีการ update  . "</td>"; //มีเว้นวรรค์ ตรง update --> error ตารางจะไม่อก
+
+session จะใช้ ประกาศทุกครั้ง 
