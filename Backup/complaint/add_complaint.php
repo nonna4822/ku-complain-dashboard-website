@@ -2,6 +2,8 @@
 //session
 session_start();
 
+require 'getCateOption.php';
+
 $name = $_SESSION['name'];
 
 if(empty($name)){
