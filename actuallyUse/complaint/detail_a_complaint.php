@@ -3,6 +3,7 @@
 
   session_start();
 
+  //session check
   $name = $_SESSION['name'];
   $username = $_SESSION['username'];
 
@@ -12,9 +13,7 @@
 
   //recive from button ( student , staff );
   $comid = $_GET['comid'];
-
   $sql = "SELECT * FROM complaint WHERE comid = '$comid'";
-
   $result = mysqli_query($conn,$sql);
 
   if(mysqli_num_rows($result) == 1){
@@ -22,6 +21,9 @@
   }else {
     echo "not found any complaint like you. ";
   }
+  //increasing score
+  $sql1 =  "UPDATE complaint SET score = score + 1 WHERE comid = '$comid'";
+  $result = mysqli_query($conn,$sql1);
 
   mysqli_close($conn);
 
@@ -392,7 +394,7 @@ function showComment(str) {
 }
 
 function addComment(str) {
-  // document.getElementById("commentList").innerHTML = str; //okay function okay
+  // document.getElementById("divtest").innerHTML = str; //okay function okay
     if (str == "") {
         document.getElementById("divtest").innerHTML = "no data in str";
         return;
@@ -406,12 +408,20 @@ function addComment(str) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                // document.getElementById("divtest").innerHTML = this.responseText;
                 showComment('<?php echo $comid; ?>');
             }
         };
-        xmlhttp.open("GET","ajax_add_comment.php?comid="+str,true);
+        var req_url = "ajax_add_comment.php?comid=<?php echo $row['comid']; ?>&username=<?php echo $username; ?>&comment="+str;
+        // document.getElementById("divtest").innerHTML = req_url+str;
+        xmlhttp.open("GET",req_url,true);
         xmlhttp.send();
     }
+}
+
+function getTextAreaVal(){
+  var str = document.getElementById("textarea").value;
+  addComment(str);
 }
 
 </script>
@@ -470,7 +480,7 @@ function addComment(str) {
     <!-- this for showing comments -->
   </div>
 
-  <h1 id="divtest"> This is divtest </h1>
+  <h1 id="divtest">  </h1>
 </div><br><br>
 
 <div class="container" style="padding-left: 14%">
@@ -478,8 +488,8 @@ function addComment(str) {
 <div class="navbar">
 
 <div class="form-group" >
-  <textarea class="form-control" rows="5" id="comment" style="width:800px"></textarea>
-</div><button onclick="addComment('<?php echo $username; ?>')" type="button" class="btn btn-primary" >ส่งความคิดเห็น</button>
+  <textarea class="form-control" rows="5" id="textarea" style="width:800px"></textarea>
+</div><button onclick="getTextAreaVal();" type="button" class="btn btn-primary" >ส่งความคิดเห็น</button>
 </div>
 </div>
 
