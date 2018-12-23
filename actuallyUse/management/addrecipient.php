@@ -42,37 +42,33 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">เพิ่มผู้รับเรื่อง</h2></center>
-  <form>
+  <form method='get' action = '../managementsystem/Add_recipient.php'>
       <div class="form-group">
       <label for="pwd">Username:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter username">
+      <input type="username" class="form-control" name="rid" id="pwd" placeholder="Enter username" value="">
     </div>
 
       <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <input type="password" class="form-control" name="rpassword" id="pwd" placeholder="Enter password">
     </div>
       <div class="form-group">
       <label for="pwd">ชื่อ:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter name">
+      <input type="username" class="form-control" name="rname" id="pwd" placeholder="Enter name">
     </div>
       <div class="form-group">
       <label for="pwd">นามสกุล:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter lastname">
+      <input type="username" class="form-control" name="rLname" id="pwd" placeholder="Enter lastname">
     </div>
       <div>
           <label>หมวดหมู่:</label></div>
-      <div class = "dropdown">
-      <button class="btn btn-default" type="button" data-toggle="dropdown"><p class ="sansserif">หมวดหมู่
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">หมวดหมู่1</a></li>
-      <li><a href="#">หมวดหมู่2</a></li>
-      <li><a href="#">หมวดหมู่3</a></li>
-    </ul>
+      <?php
+
+        require ('../managementsystem/category/querycategorydropdrown.php');
+     ?>
     </div>
     <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มผู้รับเรื่อง</button></center>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มผู้รับเรื่อง</button></center>
       <div id="demo" class="collapse">
   </div>
   </form>

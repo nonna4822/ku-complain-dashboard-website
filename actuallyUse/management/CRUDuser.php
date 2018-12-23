@@ -34,10 +34,13 @@
             <h4 id="C1"><p class ="sansserif">ภาควิชาวิศวกรรมคอมพิวเตอร์</h4>
         </li>
     </ul>
-
-    <ul class="nav justify-content-end" style="padding-left:47em">
+    <ul class="nav justify-content-end" style="padding-left:37em">
+      <form action="../management/management.php">
+       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">กลับสู่หน้าการจัดการ</p></button>
+       </form>
       <form action="../loginSystem/logout.php">
-       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button></ul>
+       <button type="submit" class="btn btn-outline-primary"><p class ="sansserif">ออกจากระบบ</p></button>
+     </ul>
      </form>
 </nav><br><br><br>
 <div class="container">

@@ -1,3 +1,16 @@
+<?php
+require '../connect.php';
+$id = $_GET['stuid'];
+$sql = "SELECT * FROM `student` WHERE stuid = '$id'";
+$result = mysqli_query($conn,$sql);
+
+$row = mysqli_fetch_array($result);
+$stuid = $row['stuid'];
+$spassword = $row['spassword'];
+$stuname = $row['stuname'];
+$stuLname = $row['stuLname'];
+mysqli_close($conn);
+ ?>
 <html lang="en">
     <style>
         body{background-image: url(../รูป/03-897.jpg)}
@@ -42,26 +55,26 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">แก้ไขผู้ใช้</h2></center>
-  <form>
+  <form method="get" action="../managementsystem/Update_user.php">
       <div class="form-group">
       <label for="pwd">Username:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter username" title="ใส่ชื่อผู้ใช้">
+      <input type="text" class="form-control" id="pwd" name="stuid" placeholder="Enter username" title="ใส่ชื่อผู้ใช้" value ="<?php echo $stuid; ?>" readonly>
     </div>
 
       <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" title="ใส่รหัส">
+      <input type="password" class="form-control" id="pwd" name="spassword" placeholder="Enter password" title="ใส่รหัส" value ="<?php echo $spassword; ?>">
     </div>
        <div class="form-group">
       <label for="pwd">ชื่อ:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter name" title="ใส่นามสกุล">
+      <input type="text" class="form-control" id="pwd" name="stuname" placeholder="Enter name" title="ใส่นามสกุล" value ="<?php echo $stuname; ?>">
     </div>
        <div class="form-group">
       <label for="pwd">นามสกุล:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter lastname" title="ใส่นามสกุล">
+      <input type="text" class="form-control" id="pwd" name="stuLname" placeholder="Enter lastname" title="ใส่นามสกุล" value ="<?php echo $stuLname; ?>">
     </div>
     <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">แก้ไขผู้ใช้</button></center>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">แก้ไขผู้ใช้</button></center>
       <div id="demo" class="collapse">
     <center>ใส่รหัสผิด</center>
   </div>

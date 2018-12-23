@@ -1,3 +1,17 @@
+<?php
+require '../connect.php';
+$id = $_GET['comid'];
+$sql = "SELECT * FROM complaint INNER JOIN student ON complaint.stuid=student.stuid WHERE comid = '$id'";
+$result = mysqli_query($conn,$sql);
+
+$row = mysqli_fetch_array($result);
+$comid = $row['comid'];
+$comname = $row['comname'];
+$catname = $row['catname'];
+$stuname = $row['stuname'];
+$stuid = $row['stuid'];
+mysqli_close($conn);
+ ?>
 <html lang="en">
     <style>
         body{background-image: url(../รูป/03-897.jpg)}
@@ -41,14 +55,20 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">ยืนยันการลบเรื่องร้องเรียน</h2></center>
-  <form>
+  <form method="get" action="../managementsystem/Delete_complaint.php">
       <div class="form-group">
       <label for="pwd">เรื่องร้องเรียน:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter category">
-    </div>
+      <input type="username" class="form-control" id="pwd" name = "comid" placeholder="Enter category" value ="<?php echo $comname; ?>" readonly>
+    <label for="pwd">หมวดหมู่:</label>
+    <input type="username" class="form-control" id="pwd" placeholder="Enter category" value ="<?php echo $catname; ?>" readonly>
+  <label for="pwd">รหัสผู้แจ้งเรื่อง:</label>
+  <input type="username" class="form-control" id="pwd" placeholder="Enter category" value ="<?php echo $stuid; ?>" readonly>
+<label for="pwd">ชื่อผู้แจ้งเรื่อง:</label>
+<input type="username" class="form-control" id="pwd" placeholder="Enter category" value ="<?php echo $stuname; ?>" readonly>
+<input type="hidden" name = "comid" value ="<?php echo $comid; ?>"></input>
     </div>
     <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">ลบเรื่องร้องเรียน</button></center>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">ลบเรื่องร้องเรียน</button></center>
       <div id="demo" class="collapse">
   </div>
   </form>

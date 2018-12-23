@@ -41,14 +41,14 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">เพิ่มหมวดหมู่</h2></center>
-  <form>
+  <form method='get' action = '../managementsystem/Add_category.php'>
       <div class="form-group">
       <label for="pwd">หมวดหมู่:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter category" title = 'ใส่หมวดหมู่'>
+      <input type="username" class="form-control" name = 'catname' id="pwd" placeholder="Enter category" title = 'ใส่หมวดหมู่'>
     </div>
     </div>
     <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มหมวดหมู่</button></center>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">เพิ่มหมวดหมู่</button></center>
       <div id="demo" class="collapse">
   </div>
   </form>

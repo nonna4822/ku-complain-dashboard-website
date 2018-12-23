@@ -1,13 +1,15 @@
 <?php
 require '../connect.php';
 
-$sql = "SELECT * FROM complaint";
+$sql = "SELECT * FROM complaint INNER JOIN student ON complaint.stuid=student.stuid";
 $result = mysqli_query($conn,$sql);
 
 while($row = mysqli_fetch_array($result)) {
     $selectObj = $selectObj."<tr>
       <td>".$row['comname']."</td>
       <td>".$row['catname']."</td>
+      <td>".$row['stuid']."</td>
+      <td>".$row['stuname']."</td>
       <td>".$row['datetimes']."</td>
       ".
       "<td><center><button class='btn btn-outline-danger' style='width:100px; height:40px;' onclick=\"window.location = '../management/deletecomplaint.php?comid=" . $row['comid'] ."';\">ลบ</button></center></td>".

@@ -1,3 +1,13 @@
+<?php
+require '../connect.php';
+$id = $_GET['catname'];
+$sql = "SELECT * FROM `category` WHERE catname = '$id'";
+$result = mysqli_query($conn,$sql);
+
+$row = mysqli_fetch_array($result);
+$catname = $row['catname'];
+mysqli_close($conn);
+ ?>
 <html lang="en">
     <style>
         body{background-image: url(../รูป/03-897.jpg)}
@@ -41,14 +51,15 @@
 </nav><br>
     <div class="container">
   <center><h2><p class ="sansserif">แก้ไขหมวดหมู่</h2></center>
-  <form>
+  <form method="get" action="../managementsystem/Update_category.php">
       <div class="form-group">
       <label for="pwd">หมวดหมู่:</label>
-      <input type="username" class="form-control" id="pwd" placeholder="Enter category" title = 'ใส่หมวดหมู่'>
+      <input type="username" class="form-control" id="pwd" name = "catname" placeholder="Enter category" title = 'ใส่หมวดหมู่' value ="<?php echo $catname; ?>">
     </div>
+    <input type="hidden" name = "id" value ="<?php echo $id; ?>"></input>
     </div>
-    <center><button type="button" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">แก้ไขหมวดหมู่</button></center>
+    <center><button type="submit" class="btn btn-success"><p class ="sansserif">กลับหน้าหลัก</button>
+      <button type="submit" class="btn btn-success" data-toggle="collapse" data-target="#demo"><p class ="sansserif">แก้ไขหมวดหมู่</button></center>
       <div id="demo" class="collapse">
   </div>
   </form>
