@@ -1,5 +1,6 @@
-<?php
+<!DOCTYPE html>
 
+<?php
 //session
 session_start();
 
@@ -9,22 +10,7 @@ if(empty($name)){
   echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
 }
 
-echo $_SESSION['name'] . "รับผิดชอบเรื่อง" .$_SESSION['catname'];
-
-?>
-
-<!DOCTYPE html>
-
-<?php
-//session
-session_start();
-
-if(session_status() == 0){
-  header("location : ../loginSystem/login.php");
-  exit;
-}
-
-require 'getCateOption.php';
+// echo $_SESSION['name'] . "รับผิดชอบเรื่อง" .$_SESSION['catname'];
 
 ?>
 <!-- 5339824014 -->
@@ -164,7 +150,7 @@ div.content {
 
 
 <script>
-function showOwnComplaint(str) {
+function showComplaint(str) {
     if (str == "") {
         document.getElementById("complaintTable").innerHTML = "";
         return;
@@ -191,13 +177,13 @@ function showOwnComplaint(str) {
 </head>
 
 
-    <body onload="showOwnComplaint('การเรียน')">
+    <body onload="showComplaint('<?php echo $_SESSION['catname']; ?>')">
 
 <div class="sidebar">
     <img src="../รูป/logo_KU-cb.jpg" width="200" height="200" >
-  <a  class = "active" href="#">Home</a>
-  <a href="../complaint/add_complaint.php">แจ้งเรื่องร้องเรียน</a>
-    <a  href="checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
+  <!-- <a  href="#">Home</a> -->
+  <!-- <a href="../complaint/add_complaint.php">แจ้งเรื่องร้องเรียน</a> -->
+    <a  class = "active" href="#">เช็คสถานะเรื่องร้องเรียนที่รับผิดชอบ</a>
   <!-- <a href="#about">About</a> -->
 </div>
 
@@ -223,30 +209,9 @@ function showOwnComplaint(str) {
 
 
 <div class="container" style="padding-left: 15%">
-  <!-- <div class="row">
-    <h2>กระทู้ร้องเรียน</h2>
-    <select name="category" onchange="showComplaint(this.value)">
-      <option value="47">การทุจริตภายในมหาวิทยาลัย</option>
-      <option value="2">การซ่อมบำรุง</option>
-      <option value="3">ซักถามข้อสงสัยทั่วไป</option>
-    </select>
-  </div> -->
-
-  <?php
-    echo $selectObj;
-   ?>
-
 
   <div id = "complaintTable" >
-    <!-- <thead class="thead-dark">
-      <tr >
-        <th width="200" height="">หัวข้อเรื่อง</th>
-        <th >เนื้อหา</th>
-        <th width="200" >Option</th>
-      </tr>
-    </thead>
-    <tbody >
-    </tbody> -->
+    <!-- show table this -->
   </div>
 
 

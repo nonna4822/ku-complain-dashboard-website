@@ -24,7 +24,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<td>" . $row['score'] . "</td>";
     echo "<td>" . $row['comname'] . "</td>";
     echo "<td>" . $row['datetimes'] . "</td>";
-    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php'> Click </a>" . "</td>";
+    echo "<td>" . "<a href = '../complaint/detail_a_complaint.php?comid=".$row['comid']."'> Click </a>" . "</td>";
     echo "</tr>";
 }
 echo "</thead>";

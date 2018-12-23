@@ -20,12 +20,13 @@ if( substr( strtolower( $username ), 0, 5 ) === "staff"){
     $row = mysqli_fetch_assoc($result);
     if($row["rpassword"] == $password){
       //set session var
-      $_SESSION['rid'] = $row["rid"];
+      $_SESSION['username'] = $row["rid"];
       $_SESSION['name'] = $row["rname"] . " " . $row["rLname"];
       $_SESSION['catname'] = $row["catname"];
-
       //go to homepage. ( logged )
-      header("Location: ../view_staff/home_stf.php"); //go to student view
+
+
+      header("Location: ../view_staff/home_stf.php"); //go to staff view
       exit;
     }else {
       echo "username or password is wrong";
@@ -47,10 +48,10 @@ if( substr( strtolower( $username ), 0, 5 ) === "staff"){
     $row = mysqli_fetch_assoc($result);
     if($row["spassword"] == $password){
       //set session var
-      $_SESSION['stuid'] = $row["stuid"];
+      $_SESSION['username'] = $row["stuid"];
       $_SESSION['name'] = $row["stuname"] . " " . $row["stuLname"];
       // $_SESSION['name'] = $row["stuLname"];
-
+      // echo $_SESSION['username'];
       //go to homepage. ( logged )
       header("Location: ../view_student/home_stu.php"); //go to student view
       exit;
