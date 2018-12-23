@@ -203,7 +203,7 @@ function showOwnComplaint(str) {
 
 </head>
 
-<body class="w3-theme-l5" onload="showOwnComplaint('<?php echo $_SESSION['stuid'] ?>')">
+<body class="w3-theme-l5" onload="showOwnComplaint('<?php echo $_SESSION['username'] ?>')">
 
 
 <div class="sidebar">
