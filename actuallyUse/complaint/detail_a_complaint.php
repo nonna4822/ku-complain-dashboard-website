@@ -1,14 +1,30 @@
 <?php
+  require '../connect.php';
 
   session_start();
 
   $name = $_SESSION['name'];
+  $username = $_SESSION['username'];
 
   if(empty($name)){
     echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
   }
 
+  //recive from button ( student , staff );
   $comid = $_GET['comid'];
+
+  $sql = "SELECT * FROM complaint WHERE comid = '$comid'";
+
+  $result = mysqli_query($conn,$sql);
+
+  if(mysqli_num_rows($result) == 1){
+    $row = mysqli_fetch_assoc($result);
+  }else {
+    echo "not found any complaint like you. ";
+  }
+
+  mysqli_close($conn);
+
 ?>
 
 <html lang="en">
@@ -342,20 +358,79 @@ h1 { font-size: 1.5em; margin: 10px; }
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+
+//Ajax
+function showComment(str) {
+  // document.getElementById("commentList").innerHTML = str; //okay function okay
+    if (str == "") {
+        document.getElementById("commentList").innerHTML = "no data in str";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("commentList").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","ajax_show_comment.php?comid="+str,true);
+        xmlhttp.send();
+    }
+}
+
+function addComment(str) {
+  // document.getElementById("commentList").innerHTML = str; //okay function okay
+    if (str == "") {
+        document.getElementById("divtest").innerHTML = "no data in str";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                showComment('<?php echo $comid; ?>');
+            }
+        };
+        xmlhttp.open("GET","ajax_add_comment.php?comid="+str,true);
+        xmlhttp.send();
+    }
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload="showComment('<?php echo $comid; ?>')" >
 
 <div class="sidebar">
     <img src="../รูป/logo_KU-cb.jpg" width="206.5" height="210" >
-  <a  href="../view_student/home_stu.php">Home</a>
-  <a href="add_complaint.php">แจ้งเรื่องร้องเรียน</a>
-  <a  class="active" href="../view_student/checkOwnComplaint.php">เช็คสถานะเรื่องร้องเรียน</a>
+  <?php
+  if( substr( strtolower( $_SESSION['username'] ), 0, 5 ) === "staff"){
+    echo "<a  class = \"active\" href=\"../view_staff/home_stf.php\"> กลับไปดูการร้องเรียนที่รับผิดชอบ </a>";
+  }else {
+    echo  "<a  href=\"../view_student/home_stu.php\">Home</a>";
+    echo  "<a  href=\"add_complaint.php\">แจ้งเรื่องร้องเรียน</a>";
+    echo  "<a  href=\"../view_student/checkOwnComplaint.php\">เช็คสถานะเรื่องร้องเรียน</a>";
+  }
+   ?>
 
 </div>
 
@@ -380,32 +455,22 @@ h1 { font-size: 1.5em; margin: 10px; }
  </div>
 </div><br><br><br><br>
 
-
+<!-- show request -->
 <div class="container" style="padding-left: 15%">
-  <div class="card bg-primary text-white">
-    <div class="card-body"><strong><?php echo $_SESSION['name']; ?> :: เรื่องเน็ตไม่ดี</strong>
-
-
-      </div>
-
-
-      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-
-    <div class="card-body" style="padding-left: 8%">มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้ มีปัญหาเชื่อมต่อเน็ตภาคไม่ได้</div>
-<!-- <div id="myDIV" style="padding-left: 3%">
-  <button class="btn"><i class="fa fa-thumbs-up"></i> Like</button>
-</div><br> -->
-
+  <div class="card card text-white bg-dark mb-3 text-white">
+    <div class="card-body"><strong><?php echo $row['stuid']; ?> :: <?php echo $row['comname']; ?></strong></div>
+    <div class="card-body" style="padding-left: 8%"><?php echo $row['comdetail']; ?></div>
   </div>
+
 </div><br>
 
+<!-- show all comment  -->
 <div class="container" style="padding-left: 25%">
-  <div class="card bg-success text-white">
-
-    <div class="card-body"><strong>b5920559999 :: เรื่องเน็ตไม่ดี</strong></div>
-    <div class="card-body" style="padding-left: 10%">ลองไปลงทะเบียนที่ตึกคอนแวนชั่นดูนะ</div>
+  <div id="commentList">
+    <!-- this for showing comments -->
   </div>
+
+  <h1 id="divtest"> This is divtest </h1>
 </div><br><br>
 
 <div class="container" style="padding-left: 14%">
@@ -414,7 +479,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 <div class="form-group" >
   <textarea class="form-control" rows="5" id="comment" style="width:800px"></textarea>
-</div><button type="button" class="btn btn-primary" >ส่งความคิดเห็น</button>
+</div><button onclick="addComment('<?php echo $username; ?>')" type="button" class="btn btn-primary" >ส่งความคิดเห็น</button>
 </div>
 </div>
 

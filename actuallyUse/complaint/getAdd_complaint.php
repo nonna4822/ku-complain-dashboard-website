@@ -16,7 +16,7 @@ $catname = mysqli_real_escape_string($conn, $_POST['catname']);//
 $comname = mysqli_real_escape_string($conn, $_POST['comname']);//
 $comdetail = mysqli_real_escape_string($conn, $_POST['comdetail']);//
 $currenttime = date('Y-m-d H:i:s');
-$stuid = $_SESSION['stuid'];
+$stuid = $_SESSION['username'];
 
 $sql = "INSERT INTO `complaint` (`comid`,
    `comname`, `comdetail`, `catname`, `stuid`,
