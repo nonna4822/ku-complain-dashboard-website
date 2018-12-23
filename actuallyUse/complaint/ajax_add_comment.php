@@ -4,6 +4,8 @@ require '../connect.php';
 
 
 $comid = $_GET['comid'];
+$comment = $_GET['comment'];
+$username = $_GET['username'];
 //
 // $sql = "SELECT * FROM comment WHERE comid = '$comid'"; //where missing .
 //
@@ -17,7 +19,7 @@ $comid = $_GET['comid'];
 //   echo "</div>";
 // }
 
-echo "Narawit" . ":" . $comid;
+echo "Narawit" . ":" . $comid . $comment . $username;
 
 mysqli_close($conn);
 ?>

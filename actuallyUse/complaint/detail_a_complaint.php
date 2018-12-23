@@ -406,7 +406,7 @@ function addComment(str) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("divtest").innerHTML = this.responseText;
+                showComment('<?php echo $comid; ?>');
             }
         };
         xmlhttp.open("GET","ajax_add_comment.php?comid="+str,true);
