@@ -11,7 +11,7 @@
     echo "<script>window.location.href = \"../loginSystem/login.php\";</script>";
   }
 
-  //recive from button ( student , staff );
+  //recive from button ( student , staff ); --> select complaint table
   $comid = $_GET['comid'];
   $sql = "SELECT * FROM complaint WHERE comid = '$comid'";
   $result = mysqli_query($conn,$sql);
@@ -21,9 +21,18 @@
   }else {
     echo "not found any complaint like you. ";
   }
-  //increasing score
+  //increasing score --> update complaint table
   $sql1 =  "UPDATE complaint SET score = score + 1 WHERE comid = '$comid'";
   $result = mysqli_query($conn,$sql1);
+
+  //check UPDATE
+  if( substr( strtolower( $username ), 0, 5 ) === "staff"){
+    $sql1 =  "UPDATE complaint SET receiversee = 1 , statusid = 2 WHERE comid = '$comid'";
+    $result = mysqli_query($conn,$sql1);
+  }else if( $row['stuid'] == $username ){
+    $sql1 =  "UPDATE complaint SET studentsee = 1 WHERE comid = '$comid'";
+    $result = mysqli_query($conn,$sql1);
+  }
 
   mysqli_close($conn);
 
@@ -458,10 +467,7 @@ function getTextAreaVal(){
       style="height:26px;width:25px" alt="Avatar"><label for="country" style="padding-left: 10; padding-top: 5; font-size: 10px; color: #ddd;"><strong><?php echo $_SESSION['name']; ?></strong></label>
 
   </a>
-  <div class="w3-dropdown-hover w3-hide-small w3-right">
-    <button class="w3-button w3-padding-large" title="Notifications" style="height:53px;width:100px"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>
-
-  </div>
+  
  </div>
 </div><br><br><br><br>
 

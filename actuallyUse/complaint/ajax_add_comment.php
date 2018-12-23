@@ -8,9 +8,8 @@ $comment = $_GET['comment'];
 $username = $_GET['username'];
 $time = date('Y-m-d H:i:s');
 
-// http://158.108.207.4/se18_10/complaint/ajax_add_comment.php?comid=37&username=590414&comment=55555
+//insert to comment
 $sql = "INSERT INTO `comment` (`username`, `comid`, `comment` , `time`) VALUES ('$username', '$comid', '$comment' , '$time')";
-//
 $result = mysqli_query($conn,$sql);
 
 if (!mysqli_query($conn,$sql)) {
@@ -19,7 +18,28 @@ if (!mysqli_query($conn,$sql)) {
     echo "update แล้ว";
 }
 
-// echo "Narawit" . ":" . $comid . $comment . $username;
+//check comment
+
+$sql = "SELECT * FROM complaint WHERE comid = '$comid'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) == 1){
+  $row = mysqli_fetch_assoc($result);
+}else {
+  echo "not found any complaint like you. ";
+}
+
+//by staff
+if( substr( strtolower( $username ), 0, 5 ) === "staff"){
+  $sql1 =  "UPDATE complaint SET statusid = 3 , studentsee = 0 WHERE comid = '$comid'";
+  $result = mysqli_query($conn,$sql1);
+}else if( $row['stuid'] == $username ){ //by owner
+  $sql1 =  "UPDATE complaint SET receiversee = 0 WHERE comid = '$comid'";
+  $result = mysqli_query($conn,$sql1);
+}else { //by another
+  $sql1 =  "UPDATE complaint SET receiversee = 0 , studentsee = 0 WHERE comid = '$comid'";
+  $result = mysqli_query($conn,$sql1);
+}
 
 mysqli_close($conn);
 ?>
